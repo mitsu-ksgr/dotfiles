@@ -11,4 +11,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Develops/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[alias]
+    g = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
+    st = status
 
