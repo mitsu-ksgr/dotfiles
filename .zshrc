@@ -57,10 +57,12 @@ export PATH=$PATH:$HOME/m2cmd/
 #################################################
 # Command alias
 #################################################
+alias l='ls -laG'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -aG'
 alias lla='ls -laG'
+alias c='clear'
 alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto '
 alias grep='grep -n --color=auto '
 alias tree='tree -NC'           # N:文字化け対策, C:色付けする
@@ -155,6 +157,15 @@ function title {
 }
 
 
+
+
+#################################################
+# Ruby: rbenv
+#################################################
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)";
+fi
+export PATH=$PATH:$HOME/.rbenv/bin:
 
 
 # Finish
