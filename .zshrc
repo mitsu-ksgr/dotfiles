@@ -63,6 +63,7 @@ alias ll='ls -lG'
 alias la='ls -aG'
 alias lla='ls -laG'
 alias c='clear'
+alias cl='clear;l;'
 alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto '
 alias grep='grep -n --color=auto '
 alias tree='tree -NC'           # N:文字化け対策, C:色付けする
@@ -154,6 +155,13 @@ function vcs_prompt_info() {
 # iTerm2のタブ名を変更する
 function title {
     echo -ne "\033]0;"$*"\007"
+}
+
+#############################
+# Android
+function logdog {
+    local awk_arg="/$1/"'{print $0}'
+    adb logcat | awk $awk_arg
 }
 
 
