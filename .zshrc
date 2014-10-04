@@ -157,8 +157,6 @@ function title {
 }
 
 
-
-
 #################################################
 # Ruby: rbenv
 #################################################
@@ -166,6 +164,14 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init -)";
 fi
 export PATH=$PATH:$HOME/.rbenv/bin:
+
+
+#################################################
+# golang
+#################################################
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
 
 
 # Finish
