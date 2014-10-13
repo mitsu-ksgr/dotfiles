@@ -3,3 +3,7 @@
 .DS_Store
 hosts_local
 
+# Python
+*.pyc
+*.pyo
+
