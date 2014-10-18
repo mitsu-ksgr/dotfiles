@@ -106,6 +106,13 @@ set hlsearch            " 検索単語を強調表示する
 
 
 "====================================================================
+"  netrw.vim
+let g:netrw_liststyle = 3       " Use TreeView.
+let g:netrw_altv = 1    " 'v'でファイルを開いたら、右側に表示する
+let g:netrw_alto = 1    " 'o'でファイルを開いたら、下に表示
+
+
+"====================================================================
 "   Color Scheme
 colorscheme jellybeans
 if &term =~ "xterm-256color" || "screen-256color"
