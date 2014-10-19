@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/NakadaMitsuaki/Projects/work/Calculator'
 let g:netrw_dirhist_2='/Users/NakadaMitsuaki/Projects/work'
 let g:netrw_dirhist_3='/Users/NakadaMitsuaki/Projects/work/Calculator'
-let g:netrw_dirhist_4='/Users/NakadaMitsuaki/Projects/work/Calculator/py'
-let g:netrw_dirhist_5='/Users/NakadaMitsuaki/Projects/work/Calculator'
-let g:netrw_dirhist_6='/Users/NakadaMitsuaki/Projects/work/Calculator/py'
-let g:netrw_dirhist_7='/Users/NakadaMitsuaki/Projects/work/Calculator'
-let g:netrw_dirhist_8='/Users/NakadaMitsuaki/Projects/work/Calculator/py'

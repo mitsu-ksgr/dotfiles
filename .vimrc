@@ -34,6 +34,7 @@ NeoBundle 'nanotech/jellybeans.vim'     " Color Scheme
 NeoBundle 'tomasr/molokai'              " Color Scheme
 NeoBundle 'tyru/caw.vim'                " Comment Out
 NeoBundle 'Shougo/neocomplcache'        " Completion
+NeoBundle 'kana/vim-submode'            " Submode
 
 
 "   Plugin Setting
@@ -87,6 +88,9 @@ set whichwrap=b,s,h,l,<,>,[,]   " カーソルがBOLやEOLに達しても止め�
 set textwidth=0         " 自動改行を抑制
 autocmd BufWritePre * :%s/\s\+$//e  " 保存時に行末のスペースを自動で削除する
 
+" セミコロンでもコマンドに入れるようにする
+noremap ; :
+
 " インサートモードでもhjklで移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -107,10 +111,10 @@ set hlsearch            " 検索単語を強調表示する
 
 "====================================================================
 "  netrw.vim
-let g:netrw_liststyle = 3       " Use TreeView.
-let g:netrw_altv = 1    " 'v'でファイルを開いたら、右側に表示する
-let g:netrw_alto = 1    " 'o'でファイルを開いたら、下に表示
-
+set splitright
+let g:netrw_liststyle = 3   " Use TreeView.
+let g:netrw_altv = 1        " 'v'でファイルを開いたら、右側に表示する
+let g:netrw_alto = 1        " 'o'でファイルを開いたら、下に表示
 
 "====================================================================
 "   Color Scheme
@@ -129,6 +133,18 @@ syntax enable
 syntax on
 hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222
 "set background=dark
+
+
+"====================================================================
+"   Window Control
+call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
+call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>+')
+call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>-')
+call submode#map('winsize', 'n', '', '>', '<C-w>>')
+call submode#map('winsize', 'n', '', '<', '<C-w><')
+call submode#map('winsize', 'n', '', '+', '<C-w>+')
+call submode#map('winsize', 'n', '', '-', '<C-w>-')
 
 
 "====================================================================
