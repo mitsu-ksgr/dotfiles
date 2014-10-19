@@ -6,3 +6,4 @@ neocomplcache
 unite-colorscheme
 unite.vim
 vim-quickrun
+vim-submode
