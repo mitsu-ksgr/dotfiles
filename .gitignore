@@ -3,7 +3,12 @@
 .DS_Store
 hosts_local
 
+# vim
+.vim/.netrwhist
+
+
 # Python
 *.pyc
 *.pyo
+
 

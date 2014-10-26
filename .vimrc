@@ -97,6 +97,16 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" Shift時に多めに移動する
+nnoremap <silent> J 10j
+nnoremap <silent> K 10k
+nnoremap <silent> H 10h
+nnoremap <silent> L 10l
+vnoremap J 10j
+vnoremap K 10k
+vnoremap H 10h
+vnoremap L 10l
+
 " 保存時に行末スペースを削除
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -137,6 +147,12 @@ hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222
 
 "====================================================================
 "   Window Control
+nnoremap s <Nop>
+nnoremap ss <C-w>w
+nnoremap sh <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
 call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
 call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>+')
