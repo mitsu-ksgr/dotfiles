@@ -97,6 +97,21 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# Command History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+HISTTIMEFORMAT="[%Y-%M-%DT%H:%M:%S] "
+setopt SHARE_HISTORY            # 履歴を共有する
+setopt APPEND_HISTORY           # 履歴は上書きではなく追加で保存する
+setopt EXTENDED_HISTORY         # 履歴に時刻情報も付加
+setopt HIST_EXPIRE_DUPS_FIRST   # 履歴の保存上限到達時は、最も古いものから削除する
+setopt HIST_FIND_NO_DUPS        # 履歴検索中、重複を飛ばす
+setopt HIST_NO_STORE            # historyコマンドを履歴に含めない
+setopt HIST_IGNORE_DUPS         # 前と同じコマンドは履歴に含めない
+setopt HIST_IGNORE_ALL_DUPS     # 重複した履歴は含めない
+setopt HIST_IGNORE_SPACE        # 履歴に余分な空白は含めない
+
 
 #################################################
 # Prompt
