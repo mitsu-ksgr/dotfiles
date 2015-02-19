@@ -12,3 +12,13 @@ hosts_local
 *.pyo
 
 
+# Sublime Text 3
+/SublimeText3/User/Package\ Control.cache
+/SublimeText3/User/Package\ Control.last-run
+/SublimeText3/User/Package\ Control.ca-list
+/SublimeText3/User/Package\ Control.ca-bundle
+/SublimeText3/User/Package\ Control.system-ca-bundle
+/SublimeText3/User/Package\ Control.cache/
+/SublimeText3/User/Package\ Control.ca-certs/
+
+

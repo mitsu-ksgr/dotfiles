@@ -1,0 +1,29 @@
+[
+    // TabChange : Ctrl+tab
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+    { "keys": ["ctrl+pagedown"], "command": "next_view_in_stack" },
+    { "keys": ["ctrl+pageup"], "command": "prev_view_in_stack" },
+
+    // Code Complete : Tab
+    { "keys": ["tab"], "command": "auto_complete", "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["shift+tab"], "command": "auto_complete_prev", "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
+
+    // View controll
+    { "keys": ["super+["], "command": "focus_group", "args": { "group": 0 } },
+    { "keys": ["super+]"], "command": "focus_group", "args": { "group": 1 } },
+
+    // Edit Support
+    {
+        "Keys": ["command+alt+j"], "command": "goto_definition"
+    }
+
+]
