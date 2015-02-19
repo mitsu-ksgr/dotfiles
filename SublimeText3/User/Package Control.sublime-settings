@@ -1,0 +1,22 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"C++11",
+		"HTML5",
+		"Markdown Extended",
+		"Monokai Extended",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"SFTP",
+		"Shader Syntax (GLSL HLSL Cg)",
+		"SublimeCodeIntel",
+		"sublimelint",
+		"SublimeLinter",
+		"Tag",
+		"Theme - Flatland"
+	]
+}
