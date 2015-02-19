@@ -36,7 +36,7 @@ export PATH=$PATH:ANDROID_SDK_TOOLS
 #############################
 # cocos2d-x
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=~/Documents/libs/cocos2d-x-3.1.1/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=~/Projects/github/cocos2d-x/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 # Add environment variable NDK_ROOT for cocos2d-x
 export NDK_ROOT=/Applications/Develops/Android/android-ndk-r9
@@ -195,6 +195,15 @@ export PATH=$PATH:$HOME/.rbenv/bin:
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
+
+#################################################
+# Perl
+#################################################
+export PERL_LOCAL_LIB_ROOT="/Users/`whoami`/perl5:$PERL_LOCAL_LIB_ROOT";
+export PERL_MB_OPT="--install_base "/Users/`whoami`/perl5"";
+export PERL_MM_OPT="INSTALL_BASE=/Users/`whoami`/perl5";
+export PERL5LIB="/Users/`whoami`/perl5/lib/perl5:$PERL5LIB";
+export PATH="/Users/`whoami`/perl5/bin:$PATH";
 
 
 # Finish
