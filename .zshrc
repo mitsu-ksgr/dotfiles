@@ -25,13 +25,15 @@ export PATH=$PATH:/usr/local/share/python
 export CPLUS_INCLUDE_PATH=/usr/local/include
 #export CPLUS_LIBRARY_PATH=/usr/local/lib
 
+# ccache
+export CCACHE_COMPILERCHECK=content
+export CCACHE_MAXSIZE=3G
 
 ##############################
 # Android SDK
 export ANDROID_HOME=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk
 export ANDROID_SDK_TOOLS=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk/platform-tools
 export PATH=$PATH:ANDROID_SDK_TOOLS
-
 
 #############################
 # cocos2d-x
@@ -91,11 +93,6 @@ setopt print_eight_bit          # 8bit文字を出力:日本語ファイル名�
 setopt no_flow_control          # フローコントロールを無効にする
 setopt interactive_comments     # '#'以降をコメントとして扱う
 unsetopt auto_menu              # タブによるファイルの順番切り替えを行わない
-
-# ヒストリーの設定
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
 
 # Command History
 HISTFILE=$HOME/.zsh_history
@@ -178,6 +175,24 @@ function logdog {
     local awk_arg="/$1/"'{print $0}'
     adb logcat | awk $awk_arg
 }
+
+#############################
+# Peco
+if which peco > /dev/null; then
+    function peco-select-history() {
+        local tac
+        if which tac > /dev/null; then
+            tac="tac"
+        else
+            tac="tail -r"
+        fi
+        BUFFER=$(\history -n 1 | eval $tac | peco --query "$LBUFFER")
+        CURSOR=$#BUFFER
+        zle clear-screen
+    }
+    zle -N peco-select-history
+    bindkey '^r' peco-select-history
+fi
 
 
 #################################################
