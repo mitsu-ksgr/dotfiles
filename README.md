@@ -1,4 +1,4 @@
-doTfiles
+DotFiles
 ========
 
 ### 設定
