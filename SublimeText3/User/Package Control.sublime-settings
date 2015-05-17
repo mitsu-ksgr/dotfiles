@@ -6,6 +6,7 @@
 	[
 		"BracketHighlighter",
 		"C++11",
+		"EncodingHelper",
 		"HTML5",
 		"Markdown Extended",
 		"Monokai Extended",
