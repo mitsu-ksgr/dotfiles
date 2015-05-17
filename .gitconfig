@@ -16,6 +16,8 @@
     g = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
     st = status
     cm = commit
+    br = branch
+    co = checkout
 
 [credential]
 	helper = osxkeychain
