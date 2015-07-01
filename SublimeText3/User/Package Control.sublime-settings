@@ -6,6 +6,7 @@
 	[
 		"BracketHighlighter",
 		"C++11",
+		"CMakeEditor",
 		"EncodingHelper",
 		"HTML5",
 		"Markdown Extended",
@@ -18,6 +19,7 @@
 		"sublimelint",
 		"SublimeLinter",
 		"Tag",
-		"Theme - Flatland"
+		"Theme - Flatland",
+		"View In Browser"
 	]
 }
