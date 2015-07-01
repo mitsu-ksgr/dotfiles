@@ -25,5 +25,4 @@
     {
         "Keys": ["command+alt+j"], "command": "goto_definition"
     }
-
 ]
