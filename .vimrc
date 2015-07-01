@@ -35,6 +35,7 @@ NeoBundle 'tomasr/molokai'              " Color Scheme
 NeoBundle 'tyru/caw.vim'                " Comment Out
 NeoBundle 'Shougo/neocomplcache'        " Completion
 NeoBundle 'kana/vim-submode'            " Submode
+NeoBundle 'vim-jp/vim-go-extra'         " Extra Vim plugins for Go
 
 
 "   Plugin Setting
