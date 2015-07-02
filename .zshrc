@@ -213,8 +213,9 @@ export PATH=$PATH:$HOME/.rbenv/bin:
 #################################################
 # golang
 #################################################
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin:$GOPATH/bin
 
 
 #################################################

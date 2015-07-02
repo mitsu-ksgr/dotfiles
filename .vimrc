@@ -35,7 +35,9 @@ NeoBundle 'tomasr/molokai'              " Color Scheme
 NeoBundle 'tyru/caw.vim'                " Comment Out
 NeoBundle 'Shougo/neocomplcache'        " Completion
 NeoBundle 'kana/vim-submode'            " Submode
-NeoBundle 'vim-jp/vim-go-extra'         " Extra Vim plugins for Go
+NeoBundle 'vim-jp/vim-go-extra'         " Golang: Extra Vim plugins for Go
+NeoBundle 'dgryski/vim-godef'           " Golang: godef support to vim.
+NeoBundle 'fatih/vim-go'                " Golang: vim support.
 
 
 "   Plugin Setting
@@ -126,6 +128,25 @@ set splitright
 let g:netrw_liststyle = 3   " Use TreeView.
 let g:netrw_altv = 1        " 'v'でファイルを開いたら、右側に表示する
 let g:netrw_alto = 1        " 'o'でファイルを開いたら、下に表示
+
+
+"====================================================================
+"   Golang
+" for golang {{{
+set rtp+=$GOROOT/misc/vim
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+
+set path+=$GOPATH/src/**
+let g:gofmt_command = 'goimports'
+au BufWritePre *.go Fmt
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+au FileType go compiler go
+
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
+
+" }}}
+
 
 "====================================================================
 "   Color Scheme
