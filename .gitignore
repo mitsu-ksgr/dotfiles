@@ -22,3 +22,6 @@ hosts_local
 /SublimeText3/User/Package\ Control.ca-certs/
 
 
+# MS-Office temporary file
+*~$*
+
