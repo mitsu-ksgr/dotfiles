@@ -1,19 +1,19 @@
 [user]
-	name = mitsu-ksgr
-	email = mitsu.naka.dev@gmail.com
+    name = mitsu-ksgr
+    email = mitsu.naka.dev@gmail.com
 [color]
     ui = true
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim -c \"set fenc=utf-8\"
-	preloadindex = true
+    excludesfile = ~/.gitignore_global
+    editor = vim -c \"set fenc=utf-8\"
+    preloadindex = true
     fscache = true
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Develops/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/Develops/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [alias]
     st = status
     # add
@@ -50,5 +50,5 @@
 
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
