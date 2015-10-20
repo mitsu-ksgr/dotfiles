@@ -54,7 +54,7 @@ export PATH=$ANT_ROOT:$PATH
 
 #############################
 # My Command
-export PATH=$PATH:$HOME/m2cmd/
+export PATH=$PATH:$HOME/m2cmd
 
 #################################################
 # Command alias
@@ -70,6 +70,7 @@ alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto '
 alias grep='grep -n --color=auto '
 alias tree='tree -NC'           # N:文字化け対策, C:色付けする
 alias blank='awk "BEGIN{for(i=0;i<10;++i){print \"\";}}"'
+alias g='git'
 
 # for Mac OS X
 case ${OSTYPE} in
@@ -231,3 +232,6 @@ export PATH="/Users/`whoami`/perl5/bin:$PATH";
 # Finish
 echo "zshrc load completed!"
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
