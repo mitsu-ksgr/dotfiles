@@ -1,24 +1,54 @@
 [user]
-	name = mitsu-ksgr
-	email = mitsu.naka.dev@gmail.com
+    name = mitsu-ksgr
+    email = mitsu.naka.dev@gmail.com
 [color]
     ui = true
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim -c \"set fenc=utf-8\"
+    excludesfile = ~/.gitignore_global
+    editor = vim -c \"set fenc=utf-8\"
+    preloadindex = true
+    fscache = true
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /Applications/Develops/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/Develops/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [alias]
-    g = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
     st = status
+    # add
+    adda = add -A
+    # commit
     cm = commit
+    cma = commit -a
+    # branch
     br = branch
+    bra = branch -a
+    brr = branch -r
+    brm = branch --merged
+    brn = branch --no-merged
+    # checkout
     co = checkout
+    cob = checkout -b
+    # push/fetch/pull
+    fe = fetch
+    fep = fetch --prune
+    # merge
+    me = merge
+    mn = merge --no-ff
+    # diff
+    di = diff
+    dis = diff --staged
+    di1 = diff HEAD~
+    # stash
+    shl = stash list
+    shs = stash save
+    shp = stash pop
+    # log
+    la = log --pretty='format:%ad %h (%an): %s' --date=short
+    lg = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
+
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
