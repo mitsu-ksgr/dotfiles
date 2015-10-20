@@ -540,10 +540,12 @@
 	<string>834 61 445 270 0 0 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>21 205 924 485 0 0 1920 1057 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>155 473 1391 584 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 284 1280 773 0 0 1920 1057 </string>
+	<string>0 0 1920 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 0 825 1058 0 0 1920 1058 </string>
+	<string>1036 480 855 510 0 0 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_25EF695C-A092-4F5C-8898-5D575AC22883</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -2745,6 +2747,12 @@
 			<string></string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453557012.70596701</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>465663098.68157297</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2793,7 +2801,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>~/dotfiles/iterm2</string>
+	<string>/Users/NakadaMitsuaki/dotfiles/iterm2</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -2813,7 +2821,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-02-26T15:44:20Z</date>
+	<date>2015-10-08T15:36:47Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2836,6 +2844,8 @@
 	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1432652416</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
@@ -2854,7 +2864,11 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.1.3</string>
 </dict>
 </plist>
