@@ -110,26 +110,12 @@ setopt HIST_IGNORE_DUPS         # 前と同じコマンドは履歴に含めな�
 setopt HIST_IGNORE_ALL_DUPS     # 重複した履歴は含めない
 setopt HIST_IGNORE_SPACE        # 履歴に余分な空白は含めない
 
-
-#################################################
 # Prompt
-#################################################
 autoload -Uz compinit           # 補完機能を有効にする
 compinit
 autoload -Uz colors; colors     # 補完でカラーを使用
 autoload -Uz is-at-least        # zshバージョン比較用
-
-OK="(*ﾟ－ﾟ) OK! "
-NG="(-Д -;) NG! "
-
-PROMPT=""
-PROMPT+="%(?.%F{green}$OK%f.%F{red}$NG%f) "
-PROMPT+="\$(vcs_prompt_info)"
-PROMPT+="
-"
-PROMPT+="%% "
-PROMPT="[%m]%# "
-RPROMPT="[%*-%F{magenta}%C%f]"
+autoload -Uz add-zsh-hook       # zshフック
 
 # LS_COLORS
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -141,25 +127,57 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 # VCS
 #################################################
 autoload -Uz vcs_info
-zstyle ":vcs_info:*" enable git svn hg bzr
-zstyle ":vcs_info:*" formats "(%s)-[%b]"
-zstyle ":vcs_info:*" actionformats "(%s)-[$b|%a]"
-zstyle ":vcs_info:(svn|bzr):*" branchformat "%b:r%r"
-zstyle ":vcs_info:bzr:*" use-simple true
-zstyle ":vcs_info:*" max-exports 6
+# zstyle ':vcs_info:*' enable git cvs svn hg bzr
+zstyle ':vcs_info:*' enable git svn hg bzr
+zstyle ':vcs_info:*' max-exports 3  # 通常メッセージ,警告メッセージ,エラーメッセージをエクスポートする
+#zstyle ':vcs_info:*' formats '(%s)-[%b]'
+#zstyle ':vcs_info:*' actionformats '(%s)-[$b|%a]'
+#zstyle ":vcs_info:(svn|bzr):*" branchformat "%b:r%r"
+#zstyle ":vcs_info:bzr:*" use-simple true
+#zstyle ":vcs_info:*" max-exports 6
+
+zstyle ':vcs_info:*' formats '[%s! %F{cyan}*%b%f]'
+zstyle ':vcs_info:*' actionformats '[%F{cyan}*%b%f(%F{red}%a%f)]'
 
 if is-at-least 4.3.10; then
-    zstyle ":vcs_info:git:*" check-for-changes true # commitしていないものをチェック
-    zstyle ":vcs_info:git:*" stagedstr "<S>"
-    zstyle ":vcs_info:git:*" unstagedstr "<U>"
-    zstyle ":vcs_info:git:*" formats "(%d) %c%u"
-    zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u"
+   zstyle ':vcs_info:git:*' formats '[(%s) %F{cyan}*%b%f]' '%F{yellow}%c%u %m%f'
+   zstyle ':vcs_info:git:*' actionformats '[(%s) %F{cyan}*%b%f(%F{red}%a%f)]' '%F{yellow}%c%u %m%f' '%F{red}<!%a>%f'
+   zstyle ':vcs_info:git:*' check-for-changes true  # commitしていないものをチェック
+   zstyle ':vcs_info:git:*' stagedstr "+"           # %cで表示する文字列
+   zstyle ':vcs_info:git:*' unstagedstr "-"         # %uで表示する文字列
 fi
 
-function vcs_prompt_info() {
+
+#################################################
+# Prompt
+#################################################
+
+OK="(*ﾟ－ﾟ) OK! "
+NG="(-Д -;) NG! "
+
+
+precmd() {
+    local rprompt="[%F{magenta}%C%f]"
+
+    psvar=()
     LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && echo -n " %{$fg[yellow]%}$vcs_info_msg_0_%f"
+
+    if [[ -z ${vcs_info_msg_0_} ]]; then
+        # do nothing...
+    else
+        local -a messages
+        [[ -n "$vcs_info_msg_0_" ]] && messages+=( "${vcs_info_msg_0_}" )
+        [[ -n "$vcs_info_msg_1_" ]] && messages+=( "${vcs_info_msg_1_}" )
+        [[ -n "$vcs_info_msg_2_" ]] && messages+=( "${vcs_info_msg_2_}" )
+        rprompt="${(j: :)messages}"
+    fi
+    RPROMPT="$rprompt"
 }
+
+#PROMPT="[%m]$(vcs_prompt_info)%# "
+#PROMPT="[%m][%1(v|%F{green}%1v%f|)]%# "
+PROMPT="[%*-%m]%# "
+RPROMPT="[%F{magenta}%C%f]${vcs_info_msg_0_}"
 
 
 #################################################
