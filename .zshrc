@@ -169,7 +169,7 @@ precmd() {
         [[ -n "$vcs_info_msg_0_" ]] && messages+=( "${vcs_info_msg_0_}" )
         [[ -n "$vcs_info_msg_1_" ]] && messages+=( "${vcs_info_msg_1_}" )
         [[ -n "$vcs_info_msg_2_" ]] && messages+=( "${vcs_info_msg_2_}" )
-        rprompt="${(j: :)messages}"
+        rprompt+="${(j: :)messages}"
     fi
     RPROMPT="$rprompt"
 }
