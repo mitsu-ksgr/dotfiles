@@ -176,7 +176,8 @@ precmd() {
 
 #PROMPT="[%m]$(vcs_prompt_info)%# "
 #PROMPT="[%m][%1(v|%F{green}%1v%f|)]%# "
-PROMPT="[%*-%m]%# "
+#PROMPT="[%*-%m]%# "
+PROMPT="[%*]%# "
 RPROMPT="[%F{magenta}%C%f]${vcs_info_msg_0_}"
 
 
