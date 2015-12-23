@@ -31,9 +31,12 @@ export CCACHE_MAXSIZE=3G
 
 ##############################
 # Android SDK
-export ANDROID_HOME=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk
-export ANDROID_SDK_TOOLS=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk/platform-tools
-export PATH=$PATH:ANDROID_SDK_TOOLS
+#export ANDROID_HOME=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk
+export ANDROID_HOME=/Applications/develop/android-sdk
+export ANDROID_TOOLS=$ANDROID_HOME/tools
+#export ANDROID_SDK_TOOLS=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk/platform-tools
+export ANDROID_SDK_TOOLS=/Applications/develop/android-sdk/platform-tools
+export PATH=$PATH:ANDROID_SDK_TOOLS:$ANDROID_TOOLS:$ANDROID_SDK_TOOLS
 
 #############################
 # cocos2d-x
@@ -254,3 +257,4 @@ echo "zshrc load completed!"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+eval $(thefuck --alias)
