@@ -1,6 +1,5 @@
 {
-	"extensions":
-	[
-		"md"
-	]
+    "extensions": ["md"],
+    "trim_trailing_white_space_on_save": false,
+    "trailing_spaces_highlight_color": "comment"
 }
