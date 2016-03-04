@@ -5,12 +5,17 @@
 	],
 	"installed_packages":
 	[
+		"AutoFileName",
 		"BracketHighlighter",
+		"Browser Refresh",
 		"C++11",
 		"CMakeEditor",
 		"ConvertToUTF8",
+		"Emmet",
 		"EncodingHelper",
+		"Goto-CSS-Declaration",
 		"HTML5",
+		"jQuery",
 		"Markdown Extended",
 		"Monokai Extended",
 		"OmniMarkupPreviewer",

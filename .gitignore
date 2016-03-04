@@ -20,6 +20,8 @@ hosts_local
 /SublimeText3/User/Package\ Control.system-ca-bundle
 /SublimeText3/User/Package\ Control.cache/
 /SublimeText3/User/Package\ Control.ca-certs/
+/SublimeText3/User/encoding_cache.json
+
 
 
 # MS-Office temporary file

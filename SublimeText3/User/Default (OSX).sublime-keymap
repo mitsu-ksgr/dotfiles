@@ -24,5 +24,15 @@
     // Edit Support
     {
         "Keys": ["command+alt+j"], "command": "goto_definition"
+    },
+
+    // Browser Refresh
+    {
+        "keys": ["super+shift+r"], "command": "browser_refresh", "args": {
+          "auto_save": true,
+          "delay": 0.0,
+          "activate": true,
+          "browsers" : ["chrome"]
+        }
     }
 ]
