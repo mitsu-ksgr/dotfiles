@@ -74,6 +74,7 @@ alias grep='grep -n --color=auto '
 alias tree='tree -NC'           # N:文字化け対策, C:色付けする
 alias blank='awk "BEGIN{for(i=0;i<10;++i){print \"\";}}"'
 alias g='git'
+alias tidy5='/usr/local/Cellar/tidy-html5/5.1.25/bin/tidy'  # need `brew install tidy-html5`
 
 # for Mac OS X
 case ${OSTYPE} in
