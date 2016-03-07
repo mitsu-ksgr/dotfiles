@@ -62,11 +62,11 @@ export PATH=$PATH:$HOME/m2cmd
 #################################################
 # Command alias
 #################################################
-alias l='ls -laG'
+alias l='ls -lahG'
 alias ls='ls -G'
-alias ll='ls -lG'
+alias ll='ls -lhG'
 alias la='ls -aG'
-alias lla='ls -laG'
+alias lla='ls -lhaG'
 alias c='clear'
 alias cl='clear;l;'
 alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto '
