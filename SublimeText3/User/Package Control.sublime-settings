@@ -20,18 +20,22 @@
 		"Markdown Extended",
 		"Monokai Extended",
 		"OmniMarkupPreviewer",
+		"Origami",
 		"Package Control",
 		"Ruby on Rails snippets",
 		"Sass",
 		"SFTP",
 		"Shader Syntax (GLSL HLSL Cg)",
+		"StatusMessage",
 		"SublimeCodeIntel",
 		"sublimelint",
 		"SublimeLinter",
 		"SublimeLinter-csslint",
 		"SublimeLinter-ruby",
+		"SyncedSideBar",
 		"Tag",
 		"Theme - Flatland",
+		"TodoReview",
 		"View In Browser"
 	]
 }
