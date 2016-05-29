@@ -4,7 +4,7 @@
 	"draw_white_space": "all",
 	"fallback_encoding": "UTF-8",
 	"font_face": "Ricty",
-	"font_size": 18.0,
+	"font_size": 17.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
