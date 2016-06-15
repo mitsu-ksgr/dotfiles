@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"AutoFileName",
+		"Better CoffeeScript",
 		"BracketHighlighter",
 		"Browser Refresh",
 		"C++11",
