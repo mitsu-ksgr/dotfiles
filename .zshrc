@@ -29,6 +29,12 @@ export CPLUS_INCLUDE_PATH=/usr/local/include
 export CCACHE_COMPILERCHECK=content
 export CCACHE_MAXSIZE=3G
 
+
+##############################
+# Java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+
 ##############################
 # Android SDK
 #export ANDROID_HOME=/Applications/Develops/Android/adt-bundle-mac-x86_64/sdk
