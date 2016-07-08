@@ -5,6 +5,11 @@
     { "keys": ["ctrl+pagedown"], "command": "next_view_in_stack" },
     { "keys": ["ctrl+pageup"], "command": "prev_view_in_stack" },
 
+    // Goto Definition
+    { "keys": ["super+g"], "command": "goto_definition" },
+    { "keys": ["alt+left"], "command": "jump_back" },
+    { "keys": ["alt+right"], "command": "jump_forward" },
+
     // Code Complete : Tab
     { "keys": ["tab"], "command": "auto_complete", "context":
         [
