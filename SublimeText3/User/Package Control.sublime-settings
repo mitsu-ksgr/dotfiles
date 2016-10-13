@@ -6,9 +6,11 @@
 	"installed_packages":
 	[
 		"AutoFileName",
+		"Better CoffeeScript",
 		"BracketHighlighter",
 		"Browser Refresh",
 		"C++11",
+		"ChannelRepositoryTools",
 		"CMakeEditor",
 		"ConvertToUTF8",
 		"Dockerfile Syntax Highlighting",
@@ -19,6 +21,7 @@
 		"HTML5",
 		"INI",
 		"jQuery",
+		"KanaKana",
 		"Markdown Extended",
 		"Monokai Extended",
 		"OmniMarkupPreviewer",
