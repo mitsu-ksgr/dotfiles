@@ -1,8 +1,2 @@
 {
-    "posix": {
-        "darwin": {
-            "chrome64": "open -a \"/Applications/browser/Google Chrome.app\"",
-        }
-    },
-    "browser": "chrome64"
 }
