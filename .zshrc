@@ -89,6 +89,10 @@ case ${OSTYPE} in
         alias chrome='open -a /Applications/browser/Google\ Chrome.app'
 esac
 
+# docker command
+alias docker-cls-containers='docker rm -v $(docker ps -aq -f status=exited)'
+alias docker-cls-images='docker rmi $(docker images -aq -f "dangling=true")'
+
 
 #################################################
 # zsh
