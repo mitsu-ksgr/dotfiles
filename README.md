@@ -1,20 +1,11 @@
-DotFiles
+dotfiles
 ========
 
-### 設定
-```shell
-# ln -s ~/dotfiles/.vim
-# ln -s ~/dotfiles/.vimrc
-# ln -s ~/dotfiles/.zshrc
-# ln -s ~/dotfiles/.gitconfig
+### OS X
 ```
-
-### Sublime Text 3 の設定を共有する
-```shell
-# cd Library/Application\ Support/Sublime\ Text\ 3/Packages/
-# rm -Rf ./User
-# ln -s ~/dotfiles/SublimeText3/User
+$ cd ~
+$ git clone git@github.com:mitsu-ksgr/dotfiles.git
+$ cd dotfiles
+$ ./setup_osx.sh
 ```
-
-
 
