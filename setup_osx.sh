@@ -10,8 +10,8 @@ pwd=`pwd`
 
 safe_link $pwd/osx/.zshrc
 safe_link $pwd/osx/.vimrc
-safe_link $pwd/osx/.gitconfig
-safe_link $pwd/osx/.gitignore_global
+safe_link $pwd/git/.gitconfig
+safe_link $pwd/git/.gitignore_global
 safe_link $pwd/osx/.irbrc
 safe_link $pwd/osx/SublimeText3/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
