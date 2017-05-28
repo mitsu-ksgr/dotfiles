@@ -1,0 +1,39 @@
+#==============================================================================
+#
+#   zshrc for arch
+#
+#==============================================================================
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+#PS1='[\u@\h \W]\$ '
+
+# Env
+export EDITOR=/usr/bin/vim
+
+# Alias
+alias ls='ls --color=auto'
+alias l='ls -lahG'
+alias ll='ls -lhG'
+alias la='ls -aG'
+alias lla='ls -lahG'
+alias c='clear'
+alias cl='clear;l'
+
+alias yo='yaourt'
+alias g='git'
+alias startx='sudo systemctl start sddm'
+alias clip='xclip -selection clipboard -i'
+
+# zsh
+autoload -Uz compinit promptinit
+compinit
+promptinit
+zstyle ':completion:*' menu select
+
+# Xmodmap
+if [[ -s ~/.Xmodmap ]]; then
+    xmodmap ~/.Xmodmap
+fi
+
