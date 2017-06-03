@@ -47,6 +47,8 @@
     # log
     la = log --pretty='format:%ad %h (%an): %s' --date=short
     lg = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
+    # git tag list
+    tags = tag -l --sort=v:refname
 
 
 [credential]
