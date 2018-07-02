@@ -15,8 +15,11 @@ fi
 #. /etc/X11/Xsession
 
 
-if [ -f ~/.Xresources ]; then
-    xrdb -merge ~/.Xresources
+if [ -e ~/.Xresources ]; then
+    # -Iオプションに、~は渡せないぽい？
+    #xrdb -I~/dotfiles/X -merge ~/.Xresources
+    xrdb -I./dotfiles/X -merge ~/.Xresources
+f
 fi
 
 if [ -f ~/.Xmodmap ]; then
