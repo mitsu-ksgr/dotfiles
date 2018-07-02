@@ -1,0 +1,75 @@
+[user]
+    name = mitsu-ksgr
+    email = k.sgr.mitsu.g@gmail.com
+
+[core]
+    editor = vim -c \"set fenc=utf-8\"
+    excludesfile = ~/.gitignore_global
+    preloadindex = true
+    fscache = true
+
+[color]
+    ui = true
+
+[alias]
+    # status
+    st = status
+
+    # add
+    adda = add -A
+
+    # commit
+    cm = commit
+    cma = commit -a
+
+    # branch
+    br = branch
+    bra = branch -a
+    brr = branch -r
+    brm = branch --merged
+    brn = branch --no-merged
+    brs = for-each-ref --sort=-committerdate --format='%(committerdate:format:%Y/%m/%d %H:%M:%S)%09%(authorname)%09%(refname)'
+
+    # checkout
+    co = checkout
+    cob = checkout -b
+
+    # reset
+    r = reset
+    ra = reset @
+
+    # push / fetch / pull
+    fe = fetch
+    fep = fetch --prune
+
+    # merge
+    me = merge
+    mn = merge --no-ff
+
+    # diff
+    di = diff
+    dis = diff --staged
+    di1 = diff HEAD~
+    diw = diff --word-diff
+
+    # stash
+    shl = stash list
+    shs = stash save
+    shp = stash pop
+    
+    # log
+    la = log --pretty='format:%ad %h (%an): %s' --date=short
+    lg = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
+    last = log -1 --pretty=format:'%h %C(yellow)[%cd]%Creset - %C(cyan)\"%s\"%Creset by %an <%ae>' --date=format:'%Y/%m/%dT%H:%M:%S'
+
+    # git flow
+    f = flow
+    ff = flow feature
+    ffst = flow feature start
+
+    # git tag list
+    tags = tag -l --sort=v:refname
+
+[ghq]
+    root = ~/dev/src
+

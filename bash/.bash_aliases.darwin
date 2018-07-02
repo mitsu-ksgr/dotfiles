@@ -1,0 +1,19 @@
+#******************************************************************************
+#
+#  Alias definitions for darwin
+#
+#******************************************************************************
+
+
+alias tac='tail -r'
+
+alias finder='open -a Finder .'
+alias chrome='open -a /Applications/browser/Google\ Chrome.app'
+
+
+# iTerm2のタブ名を変更する
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
+

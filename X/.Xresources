@@ -1,0 +1,111 @@
+!
+!
+! ~/.Xresources
+!
+!
+
+
+!------------------------------------------------------------------------------
+!
+!   rxvt-unicode-256color
+!
+!------------------------------------------------------------------------------
+!
+! Perl extension
+!
+URxvt.perl-ext-common: default, clipboard, url-select
+URxvt.perl-ext: tabbed
+
+URxvt.geometry:     96x32
+URxvt.visualBell:   false
+URxvt.saveLines:    3000
+URxvt.fading:       40
+
+
+!
+! Disable iso14755 mode
+!
+URxvt.iso14755: false
+
+
+!
+! Change copy&paste shortcuts
+!
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+
+!
+! Mouse Cursor
+!
+URxvt.cursorBlink:      true
+URxvt.cursorUnderline:  true
+URxvt.pointerBlank:     true
+URxvt.cursorColor:      [50]#ff4500
+
+
+
+!------------------------------------------------------------------------------
+!
+!   Appearances
+!
+!------------------------------------------------------------------------------
+!
+! Font list and Spacing
+!
+*.font: xft:Ricty:size=18,\
+        xft:Noto Mono:size=18, \
+        xft:IPAGothic:size=18, \
+        xft:Symbola:size=18, \
+        xft:FontAwesome:size=18
+*.letterSpace:  0
+
+
+!
+! Opacity
+!
+*.depth:        32
+!*.transparetn:  true
+
+
+!
+! Include color theme.
+! always specify "-I~/dotfiles/X" option to xrdb.
+!
+#include "./themes/iceberg"
+!#include "./themes/gruvbox_dark"
+!#include "./themes/purple"
+!#include "./themes/shakudo"
+!#include "./themes/moss_green"
+
+
+!
+! Style color   TODO: これもthemeに含めたほうがいいかも？
+!
+*.colorIT:  #8ec07c
+*.colorBD:  #d5c4al
+*.colorUL:  #83a598
+
+
+!
+! Tab
+!
+*.tabbed.tabbar-fg: 7
+*.tabbed.tabbar-bg: 0
+*.tabbed.tab-fg: 6
+*.tabbed.tab-bg: 0
+
+
+!
+! ScrollBar
+!
+*.scrollBar:            true
+*.scrollBar_right:      true
+*.scrollBar_floating:   false
+*.scrollstyle:          plain
+*.scrollColor:          #ff4500
+*.troughColor:          #00ff00
+*.scrollBar_thickness:  5px
+
+
+
