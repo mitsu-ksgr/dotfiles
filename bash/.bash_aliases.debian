@@ -1,0 +1,14 @@
+#******************************************************************************
+#
+#  Alias definitions for Debian
+#
+#******************************************************************************
+
+alias apli='apt list'
+alias aplis='apt list --installed'
+alias apsh='apt search'
+
+
+# Add x themes dir to xrdb
+alias xrdb="xrdb -I${1}/X"
+
