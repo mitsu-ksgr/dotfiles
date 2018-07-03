@@ -113,4 +113,7 @@ endfunction
 "
 " vim-plug
 "
+call plug#begin('~/.vim/plugged')
+    Plug 'vim-jp/vimdoc-ja'
+call plug#end()
 
