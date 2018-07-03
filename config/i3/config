@@ -245,7 +245,7 @@ bar {
     font xft:Ricty 14, FontAwesome 14
     position top
     #status_command i3status
-    status_command ~/dev/src/github.com/tobi-wan-kenobi/bumblebee-status/bumblebee-status \
+    status_command bumblebee-status \
         -m cpu disk:root memory datetime \
         -p root.path=/ datetime.format="%Y/%m/%d(%a) %H:%M:%S" \
         -t gruvbox-powerline #solarized-powerline 
