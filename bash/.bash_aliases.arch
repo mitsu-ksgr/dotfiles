@@ -4,6 +4,9 @@
 #
 #******************************************************************************
 
+# pacman
+alias pac='pacman'
+
 # Add x themes dir to xrdb
 alias xrdb="xrdb -I${1}/X"
 
