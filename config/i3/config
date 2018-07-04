@@ -287,8 +287,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #for_window [class="GToE"] floating enable
-#for_window [class="KeePass2"] floating enable
-
+for_window [class="KeePass*"] floating enable
 
 
 
