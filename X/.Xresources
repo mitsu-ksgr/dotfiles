@@ -14,9 +14,19 @@
 ! Perl extension
 !
 URxvt.perl-ext-common: default, clipboard, url-select
-URxvt.perl-ext: tabbed
+URxvt.perl-ext: tabbed, xim-onthespot
 
-URxvt.geometry:     96x32
+
+!
+! Input Method
+!
+URxvt.inputMethod: fcitx
+URxvt.preeditType: OnTheSpot
+
+
+!
+! Basic
+!
 URxvt.visualBell:   false
 URxvt.saveLines:    3000
 URxvt.fading:       40

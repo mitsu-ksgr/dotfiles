@@ -92,10 +92,13 @@ endif
 
 "
 " Fcitx - Auto deactivate Fcitx when leave from insert-mode.
+" Note: 多分vim8.1以降じゃないと動かない雰囲気
+" Ref: Vimからfcitxを使う - https://qiita.com/sgur/items/aa443bc2aed6fe0eb138
 "
 set ttimeoutlen=150
 set iminsert=0
 set imsearch=0
+set imcmdline
 set imactivatefunc=ImActivate
 function! ImActivate(active)
     if a:active
