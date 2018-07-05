@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#
 # /etc/X11/xinit/xinitrc
 #
 
@@ -19,7 +20,6 @@ if [ -e ~/.Xresources ]; then
     # -Iオプションに、~は渡せないぽい？
     #xrdb -I~/dotfiles/X -merge ~/.Xresources
     xrdb -I./dotfiles/X -merge ~/.Xresources
-f
 fi
 
 if [ -f ~/.Xmodmap ]; then
@@ -36,7 +36,15 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 
+#
+# Read .xinitrc for each devices.
+#
+hname=$(hostname)
+if [ -e "${HOME}/.xinitrc.${hname}" ]; then
+    source "${HOME}/.xinitrc.${hname}"
+fi
+
+
 #exec awesome
 exec i3
-
 

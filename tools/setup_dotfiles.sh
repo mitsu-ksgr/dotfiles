@@ -153,6 +153,8 @@ walk_dotfiles() {
 }
 
 main() {
+    local hname=$(hostname)
+
     #
     # zsh
     #
@@ -192,6 +194,9 @@ main() {
     echo "----- X11 -----"
     safeln "${dot_path}/X/.Xresources" "${HOME}/.Xresources"
     safeln "${dot_path}/X/.xinitrc" "${HOME}/.xinitrc"
+    if [ -f "${dot_path}/X/.xinitrc.${hname}" ]; then
+        safeln "${dot_path}/X/.xinitrc.${hname}" "${HOME}/.xinitrc.${hname}"
+    fi
     echo -e "\n"
 
     #

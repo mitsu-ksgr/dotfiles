@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#
+# .xinitrc for dunwich
+#
+# - OS ..... Arch Linux
+# - Hard ... GPD Pocket
+#
+
+if type 'xinput' > /dev/null 2>&1; then
+    # Calibrate touchscreen coordinate.
+    xinput set-prop 'pointer:Goodix Capacitive TouchScreen' \
+                    'Coordinate Transformation Matrix' 0 1 0 -1 0 1 0 0 1
+fi
+
+
