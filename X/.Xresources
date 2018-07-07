@@ -53,12 +53,12 @@ URxvt.cursorColor:      [50]#ff4500
 !
 ! Font list and Spacing
 !
-*.font: xft:Ricty:size=18,\
-        xft:Noto Mono:size=18, \
-        xft:IPAGothic:size=18, \
-        xft:Symbola:size=18, \
-        xft:FontAwesome:size=18
+*.font: xft:Inconsolata:size=14, \
+        xft:IPAGothic:size=14, \
+        xft:DejaVu Sans Mono:size=14
+
 *.letterSpace:  0
+*.kanji_encoding: UTF-8
 
 
 !
