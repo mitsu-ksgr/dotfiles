@@ -33,7 +33,7 @@ TriggerKey=SUPER_SPACE
 # Activate input method
 #ActivateKey=
 # Inactivate Input Method
-InactivateKey=ESCAPE CTRL_[
+InactivateKey=CTRL_[
 # Enable Hotkey to scroll Between Input Method
 # Available Value:
 # True False
