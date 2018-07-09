@@ -1,0 +1,69 @@
+#******************************************************************************
+#
+#   muttrc
+#
+#******************************************************************************
+
+#
+#   Load auth & your info
+#
+source `echo \$HOME/.mutt/mutt_secret`
+
+
+#------------------------------------------------------------------------------
+#
+#   Basic preferences
+#
+#------------------------------------------------------------------------------
+set charset         = "utf-8"
+set send_charset    = "utf-8"
+set editor          = `echo \$EDITOR`
+
+
+
+#------------------------------------------------------------------------------
+#
+#   GMail
+#
+#------------------------------------------------------------------------------
+#
+# IMAP Settings
+#
+set imap_keepalive  = 900
+set imap_check_subscribed = yes
+set folder          = "imaps://imap.gmail.com:993"
+set spoolfile       = "+INBOX"
+set record          = "+[GMail]/Sent Mail"
+set postponed       = "+[GMail]/Drafts"
+set trash           = "+[GMail]/Trash"
+
+
+#
+# SMTP Settings
+#
+
+
+
+#------------------------------------------------------------------------------
+#
+#   Local Folders
+#
+#------------------------------------------------------------------------------
+set header_cache        = ~/.mutt/cache/headers
+set message_cachedir    = ~/.mutt/cache/bodies
+set certificate_file    = ~/.mutt/certificates
+set signature           = ~/.mutt/signature
+
+
+
+#------------------------------------------------------------------------------
+#
+#   View Settings
+#
+#------------------------------------------------------------------------------s
+set include             = yes
+set sort                = 'threads'
+set sort_aux            = 'reverse-last-date-received'
+
+
+

@@ -199,6 +199,7 @@ main() {
     fi
     echo -e "\n"
 
+
     #
     # ranger ... https://ranger.github.io/
     #
@@ -213,6 +214,23 @@ main() {
     safeln "${dot_path}/config/ranger/scope.sh"         "${HOME}/.config/ranger/scope.sh"
     echo -e "\n"
 
+
+    #
+    # mutt ... http://www.mutt.org/
+    #
+    echo "----- Mutt -----"
+    if [ ! -d "${HOME}/.mutt" ]; then
+        mkdir -p "${HOME}/.mutt"
+    fi
+    safeln "${dot_path}/mutt/muttrc" "${HOME}/.mutt/muttrc"
+    if [ ! -f "${HOME}/.mutt/mutt_secret" ]; then
+        cp "${dot_path}/mutt/mutt_secret" "${HOME}/.mutt/mutt_secret"
+        echo "create file: ${HOME}/.mutt/mutt_secret"
+        echo "you need update mutt_secret !!!"
+    fi
+    echo -e "\n"
+
+ 
     #
     # Desktop Environments
     #
