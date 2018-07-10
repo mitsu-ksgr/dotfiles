@@ -54,7 +54,9 @@ set shiftwidth=4
 "
 set list
 "set listchars=tab:»-,trail:-,eol:↲,extends:«,nbsp:.
-set listchars=tab:»-,extends:«,nbsp:.
+set listchars=tab:»-,trail:･,nbsp:⍽,extends:»,precedes:«
+autocmd ColorScheme * highlight ZenkakuSpace cterm=underline ctermbg=yellow
+autocmd VimEnter * match ZenkakuSpace /　/
 
 
 "
@@ -113,10 +115,23 @@ function! ImStatus()
 endfunction
 
 
+
+
 "
 " vim-plug
 "
 call plug#begin('~/.vim/plugged')
     Plug 'vim-jp/vimdoc-ja'
+    Plug 'cocopon/iceberg.vim'
 call plug#end()
+
+
+"
+" Color scheme
+"
+set background=dark
+try
+    colorscheme iceberg
+catch
+endtry
 
