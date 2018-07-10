@@ -169,6 +169,12 @@ safeln() {
 
 main() {
     local hname=$(hostname)
+    local systemd_dir="${HOME}/.config/systemd/user"
+
+    if [ ! -d "${systemd_dir}" ]; then
+        mkdir -p "${systemd_dir}"
+        echo "create systemd user dir: ${systemd_dir}"
+    fi
 
     for fpath in `ls ${dot_path}/config/systemd/user/*` ; do
         fname="$(basename ${fpath})"
