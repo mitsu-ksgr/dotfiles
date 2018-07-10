@@ -63,9 +63,9 @@ URxvt.cursorColor:      [50]#ff4500
 !
 ! Font list and Spacing
 !
-*.font: xft:Inconsolata:size=14, \
-        xft:IPAGothic:size=14, \
-        xft:DejaVu Sans Mono:size=14
+*.font: xft:Inconsolata:size=18, \
+        xft:IPAGothic:size=18, \
+        xft:DejaVu Sans Mono:size=18
 
 *.letterSpace:  0
 *.kanji_encoding: UTF-8
