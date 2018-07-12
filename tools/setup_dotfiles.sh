@@ -183,6 +183,14 @@ main() {
 
 
     #
+    # tmux
+    #
+    echo "----- editor -----"
+    safeln "${dot_path}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
+    echo -e "\n"
+
+
+    #
     # Fcitx
     #
     echo "----- Fcitx -----"
