@@ -173,7 +173,12 @@ main() {
     # Editor
     #
     echo "----- editor -----"
-    safeln "${dot_path}/vim/.vimrc" "${HOME}/.vimrc"
+    if [ ! -d "${HOME}/.vim" ]; then
+        mkdir -p "${HOME}/.vim"
+    fi
+    safeln "${dot_path}/vim/.vimrc"         "${HOME}/.vimrc"
+    safeln "${dot_path}/vim/filetype.vim"   "${HOME}/.vim/filetype.vim"
+    safeln "${dot_path}/vim/ftplugin"       "${HOME}/.vim/ftplugin"
     echo -e "\n"
 
 

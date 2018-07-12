@@ -22,6 +22,7 @@ set whichwrap=h,l,b,s,<,>,[,]
 set nowrap
 set backspace=indent,eol,start
 syntax on
+filetype plugin indent on
 
 
 "
@@ -45,8 +46,10 @@ endif
 "
 set smartindent
 set expandtab
+set autoindent
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 
 "
