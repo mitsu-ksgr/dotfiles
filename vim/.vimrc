@@ -119,6 +119,24 @@ endfunction
 
 
 
+"
+" Key Remap
+"
+nnoremap s <Nop>
+nnoremap ss :<C-u>sp<CR>        " Split Horizontal
+nnoremap sv :<C-u>vs<CR>        " Split Vertical
+nnoremap sh <C-w>h              " Move to split view
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sH <C-w>H              " Move view
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap st :<C-u>tabnew<CR>    " New Tab
+nnoremap tp gT                  " Move prev tab
+nnoremap tn gt                  " Move next tab
+
 
 "
 " vim-plug
