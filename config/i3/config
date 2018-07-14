@@ -138,8 +138,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi - https://github.com/DaveDavenport/rofi/
-bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Ricty 18"'
-bindsym $mod+Shift+d exec rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Ricty 18"
+bindsym $mod+d exec i3-dmenu-desktop --dmenu='rofi -dmenu -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Inconsolata 18"'
+bindsym $mod+Shift+d exec rofi -show window -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Inconsolata 18"
 
 
 #

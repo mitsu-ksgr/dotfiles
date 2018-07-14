@@ -4,7 +4,7 @@
 #
 set -e
 
-readonly font="Ricty 18"
+readonly font="Inconsolata 18"
 
 readonly menus=(
     #----- i3wm menus
