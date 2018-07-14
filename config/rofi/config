@@ -1,3 +1,5 @@
 rofi.font: Inconsolata 18
 rofi.theme: /usr/share/rofi/themes/Monokai.rasi
 
+#include "/usr/share/rofi/themes//Monokai.theme"
+
