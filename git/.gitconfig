@@ -29,6 +29,7 @@
     brm = branch --merged
     brn = branch --no-merged
     brs = for-each-ref --sort=-committerdate --format='%(committerdate:format:%Y/%m/%d %H:%M:%S)%09%(authorname)%09%(refname)'
+    dmb = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 
     # checkout
     co = checkout
