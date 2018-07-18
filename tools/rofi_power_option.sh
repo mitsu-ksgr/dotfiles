@@ -19,6 +19,7 @@ readonly menus=(
     "notify-test-low"
     "notify-test-critical"
     "Dunst Restart"
+    "Fcitx Restart"
 
     #----- Power options
     "Suspend"           # Suspend to RAM
@@ -80,6 +81,11 @@ case "${result}" in
     "Dunst Restart" )
         killall dunst
         i3-msg restart
+        ;;
+
+    "Fcitx Restart" )
+        fcitx -r
+        notify 'Restart fcitx'
         ;;
 
     "compton-switch" )
