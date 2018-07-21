@@ -301,6 +301,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id pa-applet
+exec --no-startup-id dropbox start
 exec_always --no-startup-id dunst
 
 
