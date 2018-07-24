@@ -13,7 +13,7 @@ alias apsh='apt search'
 alias xrdb="xrdb -I${1}/X"
 
 
-# 自分でビルドした方を使う 
+# 自分でビルドした方を使う
 if [ -e /usr/local/bin/vim ]; then
     alias vim='/usr/local/bin/vim'
 fi
