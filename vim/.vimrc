@@ -144,7 +144,14 @@ nnoremap tn gt                  " Move next tab
 call plug#begin('~/.vim/plugged')
     Plug 'vim-jp/vimdoc-ja'
     Plug 'cocopon/iceberg.vim'
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+
+"
+" Plug airblade/vim-gitgutter
+"
+set updatetime=250          " Update interval
 
 
 "
