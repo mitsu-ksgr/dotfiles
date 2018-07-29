@@ -170,7 +170,7 @@ endtry
 "
 augroup vimrc-local
     autocmd!
-    autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
+    autocmd BufNewFile,BufReadPre * call s:vimrc_local(expand('<afile>:p:h'))
 augroup END
 function! s:vimrc_local(loc)
     let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)

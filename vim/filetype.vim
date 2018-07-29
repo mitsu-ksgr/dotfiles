@@ -4,6 +4,7 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetypedetect
+    au!
     au BufNewFile,BufRead *.rb      setfiletype ruby
     au BufNewFile,BufRead *.js      setfiletype javascript
     au BufNewFile,BufRead *.html    setfiletype html
