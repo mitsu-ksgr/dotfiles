@@ -145,6 +145,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-jp/vimdoc-ja'
     Plug 'cocopon/iceberg.vim'
     Plug 'airblade/vim-gitgutter'
+    Plug 'luochen1990/rainbow'
 call plug#end()
 
 
@@ -152,6 +153,29 @@ call plug#end()
 " Plug airblade/vim-gitgutter
 "
 set updatetime=250          " Update interval
+
+
+"
+" Plug luochen1990/rainbow
+" https://github.com/luochen1990/rainbow
+"
+let g:rainbow_active = 1 
+let g:rainbow_conf = {
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'cpp': {
+\           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold', 'start=/</ end=/>/ fold'],
+\       },
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
+\}
 
 
 "
