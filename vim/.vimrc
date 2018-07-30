@@ -146,6 +146,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'cocopon/iceberg.vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'luochen1990/rainbow'
+    Plug 'posva/vim-vue'
 call plug#end()
 
 
