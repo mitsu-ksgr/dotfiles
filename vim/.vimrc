@@ -61,6 +61,11 @@ set listchars=tab:»-,trail:･,nbsp:⍽,extends:»,precedes:«
 autocmd ColorScheme * highlight ZenkakuSpace cterm=underline ctermbg=yellow
 autocmd VimEnter * match ZenkakuSpace /　/
 
+"
+" Remove trailing whitespace
+"
+autocmd BufWritePre * :%s/\s\+$//ge
+
 
 "
 " Search
@@ -160,7 +165,7 @@ set updatetime=250          " Update interval
 " Plug luochen1990/rainbow
 " https://github.com/luochen1990/rainbow
 "
-let g:rainbow_active = 1 
+let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 \   'separately': {
