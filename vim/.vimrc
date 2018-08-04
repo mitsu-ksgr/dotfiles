@@ -158,7 +158,14 @@ call plug#end()
 "
 " Plug airblade/vim-gitgutter
 "
-set updatetime=250          " Update interval
+set updatetime=200          " Update interval
+
+" sign column always on
+if exists('&signcolumn')
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
 
 
 "
