@@ -31,7 +31,6 @@ filetype plugin indent on
 set number
 set visualbell
 set showmatch
-set laststatus=2
 set wildmode=list:longest
 
 if (exists('+colorcolumn'))
@@ -39,6 +38,20 @@ if (exists('+colorcolumn'))
     highlight ColorColumn ctermbg=9
 endif
 
+
+"
+" Status line
+"
+set statusline=%f                       " file name
+set statusline+=%m                      " change status
+set statusline+=%r                      " readonly flag
+set statusline+=%h                      " help buffer flag
+set statusline+=%w                      " preview window flag
+
+set statusline+=%=  " --- right-align following items ---
+set statusline+=[%{&fileencoding}]      " file encoding
+set statusline+=[%2c:%4l/%L]            " column, line, total-line
+set laststatus=2
 
 
 "
