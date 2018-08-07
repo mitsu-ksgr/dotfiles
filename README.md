@@ -10,6 +10,6 @@ $ cd dotfiles
 $ ./tools/setup_dotfiles.sh
 ```
 
-
+🍣
 
 
