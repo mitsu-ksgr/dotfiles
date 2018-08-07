@@ -1,6 +1,5 @@
-dotfiles
-========
-
+🔩🐧🔧 dotfiles
+===============
 
 ```
 $ git clone --depth 1 https://github.com/mitsu-ksgr/dotfiles
@@ -10,6 +9,5 @@ $ cd dotfiles
 $ ./tools/setup_dotfiles.sh
 ```
 
-🍣
 
 
