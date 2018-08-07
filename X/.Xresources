@@ -65,7 +65,8 @@ URxvt.cursorColor:      [50]#ff4500
 !
 *.font: xft:Inconsolata:size=18, \
         xft:IPAGothic:size=18, \
-        xft:DejaVu Sans Mono:size=18
+        xft:DejaVu Sans Mono:size=18, \
+        xft:Noto Color Emoji,
 
 *.letterSpace:  0
 *.kanji_encoding: UTF-8
