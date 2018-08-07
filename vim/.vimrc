@@ -250,7 +250,8 @@ nnoremap <silent> <space>S :<C-u>Unite grep:% -buffer-name=search-buffer<CR><C-R
 nnoremap <silent> <space>r :<C-u>UniteResume search-buffer<CR>
 
 " Open files
-nnoremap <silent> <space><space> :<C-u>Unite file buffer<CR>
+nnoremap <silent> <space><CR> :<C-u>Unite file buffer<CR>
+nnoremap <silent> <space><space> :<C-u>Unite file_rec<CR>
 
 
 "
