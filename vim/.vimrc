@@ -165,6 +165,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'luochen1990/rainbow'
     Plug 'posva/vim-vue'
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+    Plug 'Shougo/unite.vim'     " depends on vimproc
 call plug#end()
 
 
@@ -202,6 +204,53 @@ let g:rainbow_conf = {
 \       'css': 0,
 \   }
 \}
+
+
+"
+" Plug Shougo/unite
+" https://github.com/Shougo/unite.vim
+"
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+
+if executable('hw')
+    " Use hw (highway)
+    " https://github.com/tkengo/highway
+    let g:unite_source_grep_command = 'hw'
+    let g:unite_source_grep_default_opts = '--no-group --no-color -a -i'
+    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_rec_async_command='hw --no-color --no-group -l ""'
+elseif executable('ag')
+    " Use ag (the silver searcher)
+    " https://github.com/ggreer/the_silver_searcher
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts =
+                \ '-i --vimgrep --hidden --ignore ' .
+                \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+elseif executable('pt')
+    " Use pt (the platinum searcher)
+    " https://github.com/monochromegane/the_platinum_searcher
+    let g:unite_source_grep_command = 'pt'
+    let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_rec_async_command='ag --nocolor --nogroup -l ""'
+endif
+
+" search (g:word|G:current word) from current dir files.
+nnoremap <silent> <space>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> <space>G :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+
+" search (s:word|S:current word) from current buffer.
+nnoremap <silent> <space>s :<C-u>Unite grep:% -buffer-name=search-buffer<CR>
+nnoremap <silent> <space>S :<C-u>Unite grep:% -buffer-name=search-buffer<CR><C-R><C-W><CR>
+
+" Resumes the search-buffer that opened previously.
+nnoremap <silent> <space>r :<C-u>UniteResume search-buffer<CR>
+
+" Open files
+nnoremap <silent> <space><space> :<C-u>Unite file buffer<CR>
 
 
 "
