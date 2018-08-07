@@ -167,6 +167,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'posva/vim-vue'
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'Shougo/unite.vim'     " depends on vimproc
+    Plug 'scrooloose/nerdtree'
 call plug#end()
 
 
@@ -252,6 +253,13 @@ nnoremap <silent> <space>r :<C-u>UniteResume search-buffer<CR>
 " Open files
 nnoremap <silent> <space><CR> :<C-u>Unite file buffer<CR>
 nnoremap <silent> <space><space> :<C-u>Unite file_rec<CR>
+
+
+"
+" NERDTree
+" https://github.com/scrooloose/nerdtree
+"
+let NERDTreeShowHidden=1
 
 
 "
