@@ -252,7 +252,7 @@ nnoremap <silent> <space>r :<C-u>UniteResume search-buffer<CR>
 
 " Open files
 nnoremap <silent> <space><CR> :<C-u>Unite file buffer<CR>
-nnoremap <silent> <space><space> :<C-u>Unite file_rec<CR>
+nnoremap <silent> <space>f :<C-u>Unite file_rec<CR>
 
 
 "
@@ -260,6 +260,7 @@ nnoremap <silent> <space><space> :<C-u>Unite file_rec<CR>
 " https://github.com/scrooloose/nerdtree
 "
 let NERDTreeShowHidden=1
+nnoremap <silent> <space><space> :NERDTreeToggle<CR>
 
 
 "
