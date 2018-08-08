@@ -183,6 +183,8 @@ else
   let g:gitgutter_sign_column_always = 1
 endif
 
+nnoremap <silent> gr :<C-u>GitGutterAll<CR>
+
 
 "
 " Plug luochen1990/rainbow
