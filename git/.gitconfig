@@ -50,6 +50,7 @@
     # diff
     di = diff
     dis = diff --staged
+    dic = diff --cached
     di1 = diff HEAD~
     diw = diff --word-diff
 
@@ -57,7 +58,7 @@
     shl = stash list
     shs = stash save
     shp = stash pop
-    
+
     # log
     la = log --pretty='format:%ad %h (%an): %s' --date=short
     lg = log --graph --date-order --all --pretty=format:'%h %C(red)%d %C(green)%ad %C(Cyan)%cn %Creset%s' --date=short
