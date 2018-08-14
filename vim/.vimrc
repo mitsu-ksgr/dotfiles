@@ -140,6 +140,10 @@ endfunction
 "
 " Key Remap
 "
+nnoremap H 10h
+nnoremap J 10j
+nnoremap K 10k
+nnoremap L 10l
 nnoremap s <Nop>
 nnoremap ss :<C-u>sp<CR>        " Split Horizontal
 nnoremap sv :<C-u>vs<CR>        " Split Vertical
