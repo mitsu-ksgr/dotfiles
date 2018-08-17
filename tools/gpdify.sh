@@ -30,18 +30,10 @@ td="$(dirname ${rfpath})"
 # Enable wifi
 #
 echo "----- wifi setting -----"
-local wdev_name="wlp0s20u4"
-sudo ip link set "${wde_name}" up
+wdev_name="wlp0s20u4"
+sudo ip link set "${wdev_name}" up
 sudo wifi-menu "${dev_name}"
 
-# if [ "${1}" = "off" ]; then
-#     xmodmap -e "keycode 22  = BackSpace"
-#     xmodmap -e "keycode 119 = Delete"
-#     echo "Reswitch Del/BS"
-# else
-#     xmodmap -e "keycode 22  = Delete"
-#     xmodmap -e "keycode 119 = BackSpace"
-#     echo "switch Del/BS"
-# fi
+exit 0
 
 
