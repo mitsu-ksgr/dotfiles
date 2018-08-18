@@ -20,6 +20,8 @@ else
 fi
 td="$(dirname ${rfpath})"
 
+echo "Tools Dir: ${td}"
+
 # run script
 "${td}/gpd_switch_bs_del.sh"
 "${td}/gpd_adjust_display_scale.sh"
@@ -30,8 +32,10 @@ td="$(dirname ${rfpath})"
 #
 echo "----- wifi setting -----"
 wdev_name="wlp0s20u4"
+echo "Wifi Device Name: ${wdev_name}"
 sudo ip link set "${wdev_name}" up
-sudo wifi-menu "${dev_name}"
+# sudo wifi-menu "${dev_name}"
+sudo wifi-menu
 
 
 exit 0
