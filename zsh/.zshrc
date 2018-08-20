@@ -16,6 +16,7 @@ setopt hist_ignore_dups         # 直前と同じコマンドをヒストリー�
 setopt print_eight_bit          # 8bit文字を出力:日本語ファイル名を表示可能に。
 setopt no_flow_control          # フローコントロールを無効にする
 setopt interactive_comments     # '#'以降をコメントとして扱う
+setopt noclobber                # リダイレクトによる上書きを抑制する
 unsetopt auto_menu              # タブによるファイルの順番切り替えを行わない
 
 # completion
