@@ -266,6 +266,7 @@ nnoremap <silent> <space>f :<C-u>Unite file_rec<CR>
 " NERDTree
 " https://github.com/scrooloose/nerdtree
 "
+let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 nnoremap <silent> <space><space> :NERDTreeToggle<CR>
 
