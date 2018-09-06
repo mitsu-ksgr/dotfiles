@@ -147,6 +147,19 @@ zle -N peco-ghq-cd
 bindkey '^F' peco-ghq-cd
 
 
+#
+# AWS Helper
+#
+function aws-cfn-validate-template() {
+    aws cloudformation validate-template --template-body file://$1
+}
+function aws-cfn-create() {
+    aws cloudformation create-stack --stack-name $1 --template-body file://$2
+}
+function aws-cfn-delete() {
+    aws cloudformation delete-stack --stack-name $1
+}
+
 
 #------------------------------------------------------------------------------
 #
