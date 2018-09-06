@@ -288,6 +288,7 @@ bindsym $mod+minus scratchpad show
 
 #for_window [class="GToE"] floating enable
 for_window [class="KeePass*"] floating enable
+for_window [class="Sunflower"] floating enable
 
 
 
