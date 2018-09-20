@@ -7,6 +7,16 @@
 # - Hard ... GPD Pocket
 #
 
+#
+# Display Setting
+#
+xrandr -o right
+xrandr --dpi 168
+
+
+#
+# Setup Touch Screen
+#
 if type 'xinput' > /dev/null 2>&1; then
     # Calibrate touchscreen coordinate.
     xinput set-prop 'pointer:Goodix Capacitive TouchScreen' \
