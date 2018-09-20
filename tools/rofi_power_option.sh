@@ -27,7 +27,6 @@ readonly menus=(
 #    "Hybrid Suspend"    # Suspend & Hibernate
     "Reboot"
     "Shutdown"
-#    "Poweroff"
 #    "Halt"
 )
 
@@ -66,8 +65,7 @@ case "${result}" in
     "Hibernate" )       exec systemctl hibernate ;;
     "Hybrid Suspend" )  exec systemctl hybrid-sleep ;;
     "Reboot" )          exec systemctl reboot ;;
-    "Shutdown" )        exec shutdown -h now ;;
-    "Poweroff" )        exec systemctl poweroff ;;
+    "Shutdown" )        exec systemctl poweroff ;;
     "Halt" )            exec systemctl halt ;;
 
 
