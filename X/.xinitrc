@@ -41,7 +41,7 @@ export XMODIFIERS="@im=fcitx"
 #
 hname=$(hostname)
 if [ -e "${HOME}/.xinitrc.${hname}" ]; then
-    source "${HOME}/.xinitrc.${hname}"
+    . "${HOME}/.xinitrc.${hname}"
 fi
 
 
