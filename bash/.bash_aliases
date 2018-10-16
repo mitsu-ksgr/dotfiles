@@ -39,6 +39,8 @@ alias dcls-containers='docker rm -v $(docker ps -aq -f status=exited)'
 alias dcls-images='docker rm $(docker images -aq -f "dangling=true")'
 alias drmf='docker rm -f $(docker ps -aq)'
 
+# k8s
+alias kc='kubectl'
 
 
 #------------------------------------------------------------------------------
