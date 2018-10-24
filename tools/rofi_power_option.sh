@@ -20,6 +20,7 @@ readonly menus=(
     "notify-test-critical"
     "Dunst Restart"
     "Fcitx Restart"
+    "ss"    # Screenshot: maim
 
     #----- Power options
     "Suspend"           # Suspend to RAM
@@ -96,6 +97,12 @@ case "${result}" in
             compton -b --config $HOME/.config/compton/compton.conf
             notify 'compton on'
         fi
+        ;;
+
+    "ss" )
+        output_path="${HOME}/Downloads/ss-$(date +%FT%T).png"
+        maim -s ${output_path}
+        notify 'Taken screenshot!' "Saved to: ${output_path}" 'low'
         ;;
 
 esac
