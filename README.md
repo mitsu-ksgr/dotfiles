@@ -1,5 +1,5 @@
-🔩🐧🔧 dotfiles
-===============
+🔩 dotfiles 🐧 configs 🔧
+=========================
 
 ```
 $ git clone --depth 1 https://github.com/mitsu-ksgr/dotfiles
