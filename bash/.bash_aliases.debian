@@ -10,6 +10,7 @@ alias apsh='apt search'
 
 # xsel
 alias b='xsel -b'
+alias pwdb="pwd | tr -d '\n' | xsel -b"
 
 # Add x themes dir to xrdb
 alias xrdb="xrdb -I${1}/X"
