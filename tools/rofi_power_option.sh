@@ -98,9 +98,19 @@ case "${result}" in
         ;;
 
     "ss" )
+        compton_flag=0
+        if pgrep compton &> /dev/null; then
+            pkill compton &
+            compton_flag=1
+        fi
+
         output_path="${HOME}/Downloads/ss-$(date +%FT%T).png"
         maim -s ${output_path}
         notify 'Taken screenshot!' "Saved to: ${output_path}" 'low'
+
+        if [ $compton_flag -eq 1 ]; then
+            compton -b --config $HOME/.config/compton/compton.conf
+        fi
         ;;
 
 esac
