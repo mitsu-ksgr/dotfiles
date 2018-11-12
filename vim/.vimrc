@@ -172,6 +172,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'Shougo/unite.vim'     " depends on vimproc
     Plug 'scrooloose/nerdtree'
+    Plug 'chr4/nginx.vim'
 call plug#end()
 
 
