@@ -2,6 +2,8 @@
 #
 #   Power Option selection with Rofi.
 #
+#   - TODO: もはやpower managerではないこともやってるから、名前をなんとかする
+#
 set -e
 
 readonly font="Inconsolata 18"
