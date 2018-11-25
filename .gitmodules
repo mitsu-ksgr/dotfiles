@@ -1,0 +1,3 @@
+[submodule "tools/external/linux-screen-capture"]
+	path = tools/external/linux-screen-capture
+	url = git://github.com/mitsu-ksgr/linux-screen-capture.git
