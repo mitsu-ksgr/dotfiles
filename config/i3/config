@@ -152,8 +152,7 @@ set $btn_reboot     'Reboot'    'systemctl reboot'
 set $btn_shutdown   'Shutdown'  'systemctl poweroff'
 #bindsym $mod+Mod1+Escape exec \
 #    "i3-nagbar -t warning -m 'Exit?' -b $btn_shutdown -b $btn_reboot -b $btn_exit_i3"
-#bindsym $mod+Mod1+Delete exec ~/.config/i3/rofi_power_option.sh
-bindsym $mod+Mod1+Delete exec ~/dotfiles/tools/rofi_power_option.sh
+bindsym $mod+Mod1+Delete exec ~/dotfiles/tools/rofi_util_options.sh
 
 
 

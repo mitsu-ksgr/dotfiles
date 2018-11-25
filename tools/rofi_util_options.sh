@@ -1,10 +1,14 @@
 #!/bin/bash
 #
-#   Power Option selection with Rofi.
+#   Utility option selection with Rofi.
 #
 #   - TODO: もはやpower managerではないこともやってるから、名前をなんとかする
 #
 set -e
+
+readonly dotfile_path="$HOME/dotfiles"
+readonly tools_path="$dotfile_path/tools"
+readonly tools_ext_path="$tools_path/external"
 
 readonly font="Inconsolata 18"
 
@@ -15,23 +19,32 @@ readonly menus=(
     "Exit i3"
     "Close Window"
 
+    #----- Screen shot
+    "ss - Take the Screen shot"
+    "capgif - Caputre gif"
+
+    #----- Power options
+    "Sleep"             # Alias to Suspend
+    "Suspend"           # Suspend to RAM
+    #"Hibernate"         # Suspend to disk
+    #"Hybrid Suspend"    # Suspend & Hibernate
+    "Reboot"
+    "Shutdown"
+    #"Halt"
+
+
+    #========== TEST ==========
     #----- utils
     "compton-switch"
+    "Dunst Restart"
+    "Fcitx Restart"
+
+    #----- notification test
     "notify-test"
     "notify-test-low"
     "notify-test-critical"
-    "Dunst Restart"
-    "Fcitx Restart"
-    "ss"    # Screenshot: maim
-
-    #----- Power options
-    "Suspend"           # Suspend to RAM
-#    "Hibernate"         # Suspend to disk
-#    "Hybrid Suspend"    # Suspend & Hibernate
-    "Reboot"
-    "Shutdown"
-#    "Halt"
 )
+
 
 
 #
@@ -45,7 +58,6 @@ notify() {
 }
 
 
-
 readonly result=$(
     printf "%s\n" "${menus[@]}" | \
     rofi -dmenu -p "PowerOptios: " \
@@ -53,7 +65,7 @@ readonly result=$(
             -lines ${#menus[@]} -eh 1 -width 50 -padding 50 \
             -disable-history -font "${font}"
 )
-#echo "Rofi PowerOptions: '${result}' selected."
+
 
 case "${result}" in
     #----- i3wm
@@ -63,20 +75,34 @@ case "${result}" in
     "Close Window" )    i3-msg kill ;;
 
 
+    #----- Screen shot
+    "ss - Take the Screen shot" )
+        output_path="${HOME}/Downloads/ss-$(date +%FT%T).png"
+        $tools_ext_path/linux-screen-capture/take_ss.sh "${output_path}"
+        notify 'Taken screenshot!' "Saved to: ${output_path}" 'low'
+        ;;
+
+    "capgif - Caputre gif" )
+        output_path="${HOME}/Downloads/cap-$(date +%FT%T).gif"
+        $tools_ext_path/linux-screen-capture/rec_screen.sh "${output_path}"
+        notify 'Desktop Captured!' "Saved to: ${output_path}" 'low'
+        ;;
+
+
     #----- Power options
-    "Suspend" )         exec systemctl suspend ;;
-    "Hibernate" )       exec systemctl hibernate ;;
-    "Hybrid Suspend" )  exec systemctl hybrid-sleep ;;
-    "Reboot" )          exec systemctl reboot ;;
-    "Shutdown" )        exec systemctl poweroff ;;
-    "Halt" )            exec systemctl halt ;;
+    "Sleep" | "Suspend" )   exec systemctl suspend ;;
+    "Hibernate" )           exec systemctl hibernate ;;
+    "Hybrid Suspend" )      exec systemctl hybrid-sleep ;;
+    "Reboot" )              exec systemctl reboot ;;
+    "Shutdown" )            exec systemctl poweroff ;;
+    "Halt" )                exec systemctl halt ;;
 
 
+    #========== TEST ==========
     #----- notification test
     "notify-test" )          notify 'Hello!' 'This is notification test!' ;;
     "notify-test-low" )      notify 'Hello!' 'This is low level notification test!' 'low' ;;
     "notify-test-critical" ) notify 'Hello!' 'THis is critical notification test!' 'critical' ;;
-
 
     #----- other
     "Dunst Restart" )
@@ -98,24 +124,6 @@ case "${result}" in
             notify 'compton on'
         fi
         ;;
-
-    "ss" )
-        compton_flag=0
-        if pgrep compton &> /dev/null; then
-            pkill compton &
-            compton_flag=1
-        fi
-
-        output_path="${HOME}/Downloads/ss-$(date +%FT%T).png"
-        maim -s ${output_path}
-        notify 'Taken screenshot!' "Saved to: ${output_path}" 'low'
-
-        if [ $compton_flag -eq 1 ]; then
-            compton -b --config $HOME/.config/compton/compton.conf
-        fi
-        ;;
-
 esac
 
 exit 0
-
