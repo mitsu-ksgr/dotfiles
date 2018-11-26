@@ -1,3 +1,6 @@
 [submodule "tools/external/linux-screen-capture"]
 	path = tools/external/linux-screen-capture
 	url = git://github.com/mitsu-ksgr/linux-screen-capture.git
+[submodule "tools/external/support-linux-on-gpd-pocket"]
+	path = tools/external/support-linux-on-gpd-pocket
+	url = git://github.com/mitsu-ksgr/support-linux-on-gpd-pocket.git
