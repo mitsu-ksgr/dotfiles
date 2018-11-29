@@ -155,6 +155,10 @@ nnoremap sH <C-w>H              " Move view
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
+nnoremap s+ <C-w>+              " Resize view
+nnoremap s- <C-w>-              " s+ / s- ... resize height
+nnoremap s> <C-w>>              " s> / s< ... resize width
+nnoremap s< <C-w><
 nnoremap st :<C-u>tabnew<CR>    " New Tab
 nnoremap tp gT                  " Move prev tab
 nnoremap tn gt                  " Move next tab
