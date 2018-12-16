@@ -255,6 +255,7 @@ main() {
     safeln "${dot_path}/config/rofi"        "${HOME}/.config/rofi"
     echo -e "\n"
 
+
     #
     # peco ... https://github.com/peco/peco
     #
@@ -262,10 +263,11 @@ main() {
     safeln "${dot_path}/config/peco"          "${HOME}/.config/peco"
     echo -e "\n"
 
+
     #
     # font support
     #
-    echo "----- peco -----"
+    echo "----- Font support -----"
     safeln "${dot_path}/config/fontconfig"  "${HOME}/.config/fontconfig"
     echo -e "\n"
 }
