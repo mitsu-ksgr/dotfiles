@@ -243,7 +243,7 @@ main() {
     fi
     echo -e "\n"
 
- 
+
     #
     # Desktop Environments
     #
@@ -261,7 +261,13 @@ main() {
     echo "----- peco -----"
     safeln "${dot_path}/config/peco"          "${HOME}/.config/peco"
     echo -e "\n"
- 
+
+    #
+    # font support
+    #
+    echo "----- peco -----"
+    safeln "${dot_path}/config/fontconfig"  "${HOME}/.config/fontconfig"
+    echo -e "\n"
 }
 
 
