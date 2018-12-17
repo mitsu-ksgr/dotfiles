@@ -170,14 +170,19 @@ nnoremap tn gt                  " Move next tab
 "
 call plug#begin('~/.vim/plugged')
     Plug 'vim-jp/vimdoc-ja'
-    Plug 'cocopon/iceberg.vim'
     Plug 'airblade/vim-gitgutter'
-    Plug 'luochen1990/rainbow'
-    Plug 'posva/vim-vue'
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'Shougo/unite.vim'     " depends on vimproc
     Plug 'scrooloose/nerdtree'
+
+    " Color
+    Plug 'cocopon/iceberg.vim'
+    Plug 'luochen1990/rainbow'
+
+    " Syntax Highlight
     Plug 'chr4/nginx.vim'
+    Plug 'posva/vim-vue'
+    Plug 'slim-template/vim-slim'
 call plug#end()
 
 
