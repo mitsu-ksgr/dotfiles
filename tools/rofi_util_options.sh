@@ -28,6 +28,7 @@ readonly menus=(
     "Suspend"           # Suspend to RAM
     #"Hibernate"         # Suspend to disk
     #"Hybrid Suspend"    # Suspend & Hibernate
+    "Logout"
     "Reboot"
     "Shutdown"
     #"Halt"
@@ -93,6 +94,7 @@ case "${result}" in
     "Sleep" | "Suspend" )   exec systemctl suspend ;;
     "Hibernate" )           exec systemctl hibernate ;;
     "Hybrid Suspend" )      exec systemctl hybrid-sleep ;;
+    "Logout" )              exec i3-msg exit ;;
     "Reboot" )              exec systemctl reboot ;;
     "Shutdown" )            exec systemctl poweroff ;;
     "Halt" )                exec systemctl halt ;;
