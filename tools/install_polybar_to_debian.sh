@@ -80,8 +80,13 @@ rm -rf build/
 mkdir -p build && cd build/
 cmake ..
 sudo make install
+make userconfig
 
 echo 'Completed!'
 
 polybar --version
+
+echo 'Run polybar to:'
+echo '% polybar example'
+
 exit 0

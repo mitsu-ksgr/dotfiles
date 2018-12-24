@@ -253,6 +253,7 @@ main() {
     safeln "${dot_path}/config/compton"     "${HOME}/.config/compton"
     safeln "${dot_path}/config/dunst"       "${HOME}/.config/dunst"
     safeln "${dot_path}/config/rofi"        "${HOME}/.config/rofi"
+    safeln "${dot_path}/config/polybar"     "${HOME}/.config/polybar"
     echo -e "\n"
 
 
