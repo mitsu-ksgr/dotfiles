@@ -210,6 +210,11 @@ main() {
     if [ -f "${dot_path}/X/.xinitrc.${hname}" ]; then
         safeln "${dot_path}/X/.xinitrc.${hname}" "${HOME}/.xinitrc.${hname}"
     fi
+    safeln "${dot_path}/X/.xprofile" "${HOME}/.xprofile"
+    if [ -f "${dot_path}/X/.xprofile.${hname}" ]; then
+        safeln "${dot_path}/X/.xprofile.${hname}" "${HOME}/.xprofile.${hname}"
+    fi
+
     echo -e "\n"
 
 
