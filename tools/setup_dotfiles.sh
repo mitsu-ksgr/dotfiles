@@ -210,6 +210,11 @@ main() {
     if [ -f "${dot_path}/X/.xinitrc.${hname}" ]; then
         safeln "${dot_path}/X/.xinitrc.${hname}" "${HOME}/.xinitrc.${hname}"
     fi
+    safeln "${dot_path}/X/.xprofile" "${HOME}/.xprofile"
+    if [ -f "${dot_path}/X/.xprofile.${hname}" ]; then
+        safeln "${dot_path}/X/.xprofile.${hname}" "${HOME}/.xprofile.${hname}"
+    fi
+
     echo -e "\n"
 
 
@@ -253,6 +258,7 @@ main() {
     safeln "${dot_path}/config/compton"     "${HOME}/.config/compton"
     safeln "${dot_path}/config/dunst"       "${HOME}/.config/dunst"
     safeln "${dot_path}/config/rofi"        "${HOME}/.config/rofi"
+    safeln "${dot_path}/config/polybar"     "${HOME}/.config/polybar"
     echo -e "\n"
 
 

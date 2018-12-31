@@ -243,11 +243,11 @@ bar {
 
     font xft:Inconsolata 14, FontAwesome 14
     position top
-    #status_command i3status
-    status_command bumblebee-status \
-        -m cpu disk:root memory datetime \
-        -p root.path=/ datetime.format="%Y/%m/%d(%a) %H:%M:%S" \
-        -t gruvbox-powerline #solarized-powerline
+    status_command i3status
+    #status_command bumblebee-status \
+    #    -m cpu disk:root memory datetime \
+    #    -p root.path=/ datetime.format="%Y/%m/%d(%a) %H:%M:%S" \
+    #    -t gruvbox-powerline #solarized-powerline
 
     colors {
         background  $bg-color
@@ -305,5 +305,8 @@ exec --no-startup-id nm-applet
 
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec_always --no-startup-id dunst
+
+# Polybar 調整中
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
