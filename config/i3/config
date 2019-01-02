@@ -243,7 +243,11 @@ bar {
 
     font xft:Inconsolata 14, FontAwesome 14
     position top
-    status_command i3status -c ~/.config/i3status/i3status.conf
+    mode dock
+    tray_padding 3
+
+    status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+    #status_command i3status -c ~/.config/i3status/i3status.conf
     #status_command bumblebee-status \
     #    -m cpu disk:root memory datetime \
     #    -p root.path=/ datetime.format="%Y/%m/%d(%a) %H:%M:%S" \

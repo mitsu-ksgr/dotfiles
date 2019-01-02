@@ -255,6 +255,7 @@ main() {
     echo "----- Desktop Environments -----"
     safeln "${dot_path}/config/i3"          "${HOME}/.config/i3"
     safeln "${dot_path}/config/i3status"    "${HOME}/.config/i3status"
+    safeln "${dot_path}/config/i3blocks"    "${HOME}/.config/i3blocks"
     safeln "${dot_path}/config/compton"     "${HOME}/.config/compton"
     safeln "${dot_path}/config/dunst"       "${HOME}/.config/dunst"
     safeln "${dot_path}/config/rofi"        "${HOME}/.config/rofi"
