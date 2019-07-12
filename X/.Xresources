@@ -64,9 +64,10 @@ URxvt.cursorColor:      [50]#ff4500
 ! Font list and Spacing
 !
 *.font: xft:Inconsolata:size=18, \
+        xft:Noto\ Color\ Emoji:pixelsize=18, \
+        xft:Font\ Awesome:antialias=true:pixelsize=18, \
         xft:IPAGothic:size=18, \
         xft:DejaVu Sans Mono:size=18, \
-        xft:Noto Color Emoji,
 
 *.letterSpace:  0
 *.kanji_encoding: UTF-8
@@ -83,7 +84,8 @@ URxvt.cursorColor:      [50]#ff4500
 ! Include color theme.
 ! always specify "-I~/dotfiles/X" option to xrdb.
 !
-#include "./themes/iceberg"
+!#include "./themes/iceberg"
+#include "/home/mitsu/dotfiles/X/themes/iceberg"
 !#include "./themes/gruvbox_dark"
 !#include "./themes/purple"
 !#include "./themes/shakudo"

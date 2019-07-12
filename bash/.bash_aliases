@@ -21,6 +21,7 @@ alias lla='ls -lahG --color=auto'
 alias blank='awk "BEGIN{for(i=0; i<10; ++i){printf\"\";}}"'
 alias c='clear'
 alias cl='clear; l;'
+alias cls='clear; ls;'
 alias cll='clear; ll;'
 alias cla='clear; la;'
 
