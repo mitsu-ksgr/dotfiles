@@ -183,6 +183,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'chr4/nginx.vim'
     Plug 'posva/vim-vue'
     Plug 'slim-template/vim-slim'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 
