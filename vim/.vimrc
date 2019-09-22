@@ -175,6 +175,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/unite.vim'     " depends on vimproc
     Plug 'scrooloose/nerdtree'
 
+    " lsp
+    Plug 'prabirshrestha/async.vim'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'natebosch/vim-lsc'
+
     " Color
     Plug 'cocopon/iceberg.vim'
     Plug 'luochen1990/rainbow'
@@ -294,6 +301,31 @@ try
     colorscheme iceberg
 catch
 endtry
+
+
+"
+" LSP
+" https://github.com/prabirshrestha/vim-lsp
+" https://github.com/prabirshrestha/vim-lsp/wiki
+"
+let g:lsp_async_completion = 1
+let g:lsp_diagnostics_echo_cursor = 1
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd BufWritePre *.go LspDocumentFormatSync
+endif
+if executable('go-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'go-langserver',
+        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd BufWritePre *.go LspDocumentFormatSync
+endif
 
 
 "
