@@ -310,17 +310,18 @@ endtry
 "
 let g:lsp_async_completion = 1
 let g:lsp_diagnostics_echo_cursor = 1
-augroup vimrc-lsp
-    autocmd!
-    if executable('gopls')
+
+if executable('gopls')
+    augroup vimrc-lsp
+        autocmd!
         au User lsp_setup call lsp#register_server({
             \ 'name': 'gopls',
             \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
             \ 'whitelist': ['go'],
             \ })
         autocmd BufWritePre *.go LspDocumentFormatSync
-    endif
-augroup END
+    augroup END
+endif
 
 
 "
