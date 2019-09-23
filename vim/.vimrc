@@ -310,7 +310,6 @@ endtry
 "
 let g:lsp_async_completion = 1
 let g:lsp_diagnostics_echo_cursor = 1
-
 if executable('gopls')
     augroup vimrc-lsp
         autocmd!
