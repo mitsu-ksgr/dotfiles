@@ -306,7 +306,7 @@ endtry
 "
 " LSP
 " https://github.com/prabirshrestha/vim-lsp
-" https://github.com/prabirshrestha/vim-lsp/wiki
+" https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Go
 "
 let g:lsp_async_completion = 1
 let g:lsp_diagnostics_echo_cursor = 1
