@@ -319,6 +319,9 @@ if executable('gopls')
             \ 'whitelist': ['go'],
             \ })
         autocmd BufWritePre *.go LspDocumentFormatSync
+
+        " 以下は LSP ではなく vim-go の機能だけど、ついでに一緒に登録しておく
+        autocmd BufWritePre *.go GoImports
     augroup END
 endif
 
