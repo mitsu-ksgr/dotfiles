@@ -180,7 +180,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'prabirshrestha/vim-lsp'
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
-    Plug 'natebosch/vim-lsc'
 
     " Color
     Plug 'cocopon/iceberg.vim'
@@ -310,6 +309,8 @@ endtry
 "
 let g:lsp_async_completion = 1
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_fold_enabled = 0
+let g:lsp_text_edit_enabled = 0
 if executable('gopls')
     augroup vimrc-lsp
         autocmd!
@@ -319,11 +320,17 @@ if executable('gopls')
             \ 'whitelist': ['go'],
             \ })
         autocmd BufWritePre *.go LspDocumentFormatSync
+        autocmd FileType go setlocal omnifunc=lsp#complete
 
         " 以下は LSP ではなく vim-go の機能だけど、ついでに一緒に登録しておく
         autocmd BufWritePre *.go GoImports
     augroup END
 endif
+
+" asyncomplete.vim
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 
 "
