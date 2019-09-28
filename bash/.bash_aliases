@@ -11,11 +11,11 @@
 #
 #------------------------------------------------------------------------------
 # ls
-alias l='ls -lahG --color=auto'
-alias ls='ls -G --color=auto'
-alias ll='ls -lhG --color=auto'
-alias la='ls -aG --color=auto'
-alias lla='ls -lahG --color=auto'
+alias l='ls -lahGN --color=auto'
+alias ls='ls -GN --color=auto'
+alias ll='ls -lhGN --color=auto'
+alias la='ls -aGN --color=auto'
+alias lla='ls -lahGN --color=auto'
 
 # Clear
 alias blank='awk "BEGIN{for(i=0; i<10; ++i){printf\"\";}}"'
