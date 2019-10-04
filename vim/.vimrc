@@ -311,6 +311,9 @@ let g:lsp_async_completion = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_fold_enabled = 0
 let g:lsp_text_edit_enabled = 0
+
+" Golang
+let g:go_doc_keywordprg_enabled = 0 " disable shift-k key-map
 if executable('gopls')
     augroup vimrc-lsp
         autocmd!
