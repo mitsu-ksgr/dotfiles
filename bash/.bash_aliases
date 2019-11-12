@@ -43,6 +43,16 @@ alias drmf='docker rm -f $(docker ps -aq)'
 # k8s
 alias kc='kubectl'
 
+# funcs
+function calc {
+    [ $# -ge 1 ] && echo "scale=5; $1" | bc
+}
+
+function touchp {
+    mkdir -p $(dirname "$1")
+    touch "$1"
+}
+
 
 #------------------------------------------------------------------------------
 #
