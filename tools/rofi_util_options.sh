@@ -85,7 +85,7 @@ case "${result}" in
 
     "capgif - Caputre gif" )
         output_path="${HOME}/Downloads/cap-$(date +%FT%T).gif"
-        $tools_ext_path/linux-screen-capture/rec_screen.sh "${output_path}"
+        $tools_ext_path/linux-screen-capture/rec_screen.sh -t 15 "${output_path}"
         notify 'Desktop Captured!' "Saved to: ${output_path}" 'low'
         ;;
 
