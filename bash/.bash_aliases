@@ -30,6 +30,14 @@ alias grep='grep -n --color=auto'
 alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto'
 alias tree='tree -NC'   # N:文字化け対策, C:色付け
 
+# Image Magick
+alias imgsize='identify -format "%wx%h\n"'
+function imgresize {
+    # imgresize image.jpg 240x240
+    # imgresize image.jpg 50%
+    convert "$1" -resize "$2" "${1%.*}_$2.${1##*.}"
+}
+
 # Git
 alias g='git'
 
