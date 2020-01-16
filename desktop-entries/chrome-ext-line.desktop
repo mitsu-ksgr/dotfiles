@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+#
+# LINE website-apps (chrome-extension)
+#
+# https://line.me/ja/download
+# https://chrome.google.com/webstore/detail/line/menkifleemblimdogmoihpfopnplikde
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=LINE on ChromeExt
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html
+Icon=chrome-ophjlpahpchlmihnnnihgmmeilfjmjjc-Default
+StartupWMClass=crx_ophjlpahpchlmihnnnihgmmeilfjmjjc

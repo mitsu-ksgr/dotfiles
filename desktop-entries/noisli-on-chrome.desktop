@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#
+# Noisli websites-app
+#
+# https://www.noisli.com/
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Noisli on Chrome
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://www.noisli.com/
