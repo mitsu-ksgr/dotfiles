@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#
+# Wandbox websites-app
+#
+# https://wandbox.org/
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Wandbox on Chrome
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://wandbox.org/
