@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#
+# Google Play Music webistes-app
+#
+# https://play.google.com/music/listen
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Google Play Music on Chrome
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://play.google.com/music/listen
