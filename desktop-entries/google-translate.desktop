@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#
+# Google Translator website-app
+#
+# https://translate.google.co.jp/#auto/ja/
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Google Translator
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://translate.google.co.jp/#auto/ja/
