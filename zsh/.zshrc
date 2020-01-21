@@ -27,6 +27,11 @@ autoload -Uz is-at-least        # zshバージョン比較用
 autoload -Uz add-zsh-hook       # zshフック
 
 
+# disable stty's <C-s>/<C-q> keybinds
+if [[ -o login ]]; then
+    stty stop undef
+    stty start undef
+fi
 
 
 #------------------------------------------------------------------------------
