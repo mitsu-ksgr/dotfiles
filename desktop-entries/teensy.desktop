@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+#
+# Teensy Loader App
+#
+# https://www.pjrc.com/teensy/loader.html
+#
+[Desktop Entry]
+Type=Application
+Name=Teensy Loader
+GenericName=Teensy Loader
+Comment=Teensy Loader Application
+Exec="/home/mitsu/arduino/teensy/teensy"
+Terminal=false
+Categories=Development;Electronics;
+StartupWMClass=processing-app-Base
+
