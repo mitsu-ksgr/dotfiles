@@ -78,13 +78,17 @@ case "${result}" in
 
     #----- Screen shot
     "ss - Take the Screen shot" )
-        output_path="${HOME}/Downloads/ss-$(date +%FT%T).png"
+        output_dir="${HOME}/Documents/screenshots/ss"
+        mkdir -p $output_dir
+        output_path="${output_dir}/ss-$(date +%FT%T).png"
         $tools_ext_path/linux-screen-capture/take_ss.sh "${output_path}"
         notify 'Taken screenshot!' "Saved to: ${output_path}" 'low'
         ;;
 
     "capgif - Caputre gif" )
-        output_path="${HOME}/Downloads/cap-$(date +%FT%T).gif"
+        output_dir="${HOME}/Documents/screenshots/gif"
+        mkdir -p $output_dir
+        output_path="${output_dir}/cap-$(date +%FT%T).gif"
         $tools_ext_path/linux-screen-capture/rec_screen.sh -t 15 "${output_path}"
         notify 'Desktop Captured!' "Saved to: ${output_path}" 'low'
         ;;
