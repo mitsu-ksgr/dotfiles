@@ -190,6 +190,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'posva/vim-vue'
     Plug 'slim-template/vim-slim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'udalov/kotlin-vim'
 call plug#end()
 
 
