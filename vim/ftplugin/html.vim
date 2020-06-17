@@ -9,5 +9,5 @@ set softtabstop=2
 set shiftwidth=2
 
 " close tag completion
-inoremap <buffer> </ </<C-x><C-o><ESC>==<ESC>
+inoremap <buffer> </ </<C-x><C-o>
 
