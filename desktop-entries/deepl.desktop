@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#
+# DeepL website-app
+#
+# https://www.deepl.com/translator
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DeepL
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://www.deepl.com/translator
