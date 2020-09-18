@@ -29,6 +29,7 @@ alias cla='clear; la;'
 alias grep='grep -n --color=auto'
 alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto'
 alias tree='tree -NC'   # N:文字化け対策, C:色付け
+alias bokuno='chown -R $USER:$USER'
 
 # Image Magick
 alias imgsize='identify -format "%wx%h\n"'
