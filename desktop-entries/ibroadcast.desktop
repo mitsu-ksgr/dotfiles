@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+#
+# iBroadcast
+#
+# https://media.ibroadcast.com/
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=iBroadcast
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://media.ibroadcast.com/
+
