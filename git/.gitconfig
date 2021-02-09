@@ -75,3 +75,6 @@
 [ghq]
     root = ~/dev/src
 
+[init]
+    defaultBranch = main
+
