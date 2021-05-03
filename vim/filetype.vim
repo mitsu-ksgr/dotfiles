@@ -12,5 +12,6 @@ augroup filetypedetect
     au BufNewFile,BufRead *.html    setfiletype html
     au BufNewFile,BufRead *.json    setfiletype json
     au BufNewFile,BufRead *.sh      setfiletype sh
+    au BufNewFile,BufRead *.toml    setfiletype toml
 augroup END
 
