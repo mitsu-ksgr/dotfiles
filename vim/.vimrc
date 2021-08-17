@@ -152,14 +152,18 @@ nnoremap sh <C-w>h              " Move to split view
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
-nnoremap sH <C-w>H              " Move view
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap s+ <C-w>+              " Resize view
-nnoremap s- <C-w>-              " s+ / s- ... resize height
-nnoremap s> <C-w>>              " s> / s< ... resize width
-nnoremap s< <C-w><
+"nnoremap sH <C-w>H              " Move view
+"nnoremap sJ <C-w>J
+"nnoremap sK <C-w>K
+"nnoremap sL <C-w>L
+"nnoremap s+ <C-w>+              " Resize view
+"nnoremap s- <C-w>-              " s+ / s- ... resize height
+"nnoremap s> <C-w>>              " s> / s< ... resize width
+"nnoremap s< <C-w><
+nnoremap sK <C-w>+              " Resize view size
+nnoremap sJ <C-w>-              " sJ / sK ... resize height
+nnoremap sH <C-w>>              " sH / sL ... resize width
+nnoremap sL <C-w><
 nnoremap st :<C-u>tabnew<CR>    " New Tab
 nnoremap tp gT                  " Move prev tab
 nnoremap tn gt                  " Move next tab
