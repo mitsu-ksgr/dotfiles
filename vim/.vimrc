@@ -196,6 +196,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'slim-template/vim-slim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'udalov/kotlin-vim'
+    Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 
