@@ -5,7 +5,7 @@ Desktop Entry Files
 
 ```bash
 $ mkdir -p ~/.local/share/applications
-$ ln -s ./desktop-entries/*.desktop ~/.local/share/applications/
+$ ln -s ~/dotfiles/desktop-entries/*.desktop ~/.local/share/applications/
 ```
 
 

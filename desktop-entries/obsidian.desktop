@@ -1,0 +1,10 @@
+#
+# Obsidian AppImage
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Obsidian
+Terminal=false
+Exec=/usr/local/bin/Obsidian-0.13.31.AppImage --no-sandbox
+
