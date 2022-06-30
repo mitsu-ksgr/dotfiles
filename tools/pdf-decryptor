@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -eu
+umask 0022
+
+readonly SCRIPT_NAME=$(basename $0)
+
+
+#
+# Usage
+#
+usage() {
+    cat <<__EOS__
+Usage:
+    ${SCRIPT_NAME} PDF_FILE
+
+Description:
+    Run:
+        qpdf --decript PDF_FILE.pdf PDF_FILE_mod.pdf
+        mv PDF_FILE_mod.pdf PDF_FILE.pdf
+__EOS__
+}
+
+
+
+#
+# main process
+#
+readonly file="${1-}"
+
+
+# Validations
+if [ -z "$file" ]; then
+    echo "Error: missing args." 1>&2
+    usage
+    exit 1
+fi
+if [ ! -f "$file" ]; then
+    echo "Error: file not found: $file" 1>&2
+    exit 1
+fi
+
+
+# Prepare temp dir
+unset tmp_dir
+on_exit() {
+    [[ -n "$tmp_dir" ]] && rm -rf "$tmp_dir";
+}
+trap on_exit EXIT
+trap 'trap - EXIT; on_exit; exit -1' INT PIPE TERM
+readonly tmp_dir=$(mktemp -d "/tmp/${SCRIPT_NAME}.tmp.XXXXXX")
+
+
+# Exec qpdf on tmp_dir
+qpdf --decrypt $file $tmp_dir/decrypt.pdf
+
+
+# Replace the original file
+mv $tmp_dir/decrypt.pdf $file
+
+
+echo "Decrypted: $file"
+exit 0
+
