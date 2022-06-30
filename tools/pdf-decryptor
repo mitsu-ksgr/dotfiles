@@ -29,6 +29,10 @@ readonly file="${1-}"
 
 
 # Validations
+if [ -z "$(command -v qpdf)" ]; then
+    echo "Error: command <qpdf> is not installed." 1>&2
+    exit 1
+fi
 if [ -z "$file" ]; then
     echo "Error: missing args." 1>&2
     usage
