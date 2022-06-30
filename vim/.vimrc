@@ -190,13 +190,20 @@ call plug#begin('~/.vim/plugged')
     Plug 'cocopon/iceberg.vim'
     Plug 'luochen1990/rainbow'
 
+    "--------------------------------------------
     " Syntax Highlight
+    "--------------------------------------------
     Plug 'chr4/nginx.vim'
     Plug 'posva/vim-vue'
     Plug 'slim-template/vim-slim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'udalov/kotlin-vim'
     Plug 'leafgarland/typescript-vim'
+
+    " Svelte
+    Plug 'othree/html5.vim'
+    Plug 'pangloss/vim-javascript'
+    Plug 'evanleck/vim-svelte', {'branch': 'main'}
 call plug#end()
 
 
