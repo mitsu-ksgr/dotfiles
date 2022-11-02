@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+#
+# Android Studio
+#
+# https://developer.android.com/studio?hl=ja
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=AndroidStudio
+Terminal=false
+Exec=/usr/local/android-studio/bin/studio.sh
+
