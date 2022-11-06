@@ -53,6 +53,19 @@ alias drmf='docker rm -f $(docker ps -aq)'
 # k8s
 alias kc='kubectl'
 
+# jq
+# see: https://github.com/stedolan/jq/issues/243
+function jq_scheme {
+    jq 'select(objects)|=[.] | map(paths(scalars)) | map(map(select(numbers)="[]") | join(".")) | unique'
+}
+function jq_paths {
+    jq -r 'paths(scalars) as $p | ([$p[] | tostring] | join("."))'
+}
+function jq_flat {
+    jq -r 'paths(scalars) as $p | [([$p[] | tostring] | join(".")), (getpath($p) | tojson)]| join(" = ")'
+}
+
+
 # funcs
 function calc {
     [ $# -ge 1 ] && echo "scale=5; $1" | bc
