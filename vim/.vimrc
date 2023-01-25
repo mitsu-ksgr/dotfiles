@@ -199,6 +199,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'udalov/kotlin-vim'
     Plug 'leafgarland/typescript-vim'
+    Plug 'hashivim/vim-terraform'
 
     " Svelte
     Plug 'othree/html5.vim'
