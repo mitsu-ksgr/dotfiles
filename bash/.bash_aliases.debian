@@ -7,6 +7,7 @@
 alias apli='apt list'
 alias aplis='apt list --installed'
 alias apsh='apt search'
+alias bat='batcat'
 
 # xsel
 alias b='xsel -b'
