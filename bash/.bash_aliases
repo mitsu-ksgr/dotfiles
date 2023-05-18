@@ -45,7 +45,7 @@ alias g='git'
 # Docker
 alias d='docker'
 alias dcmp='docker compose'
-alias dcmp-watch='watch -n 1 docker compose ps'
+alias dcmp-watch="watch -n 1 'docker compose ps --format json | dcmp-fmt'"
 alias dcls-containers='docker rm -v $(docker ps -aq -f status=exited)'
 alias dcls-images='docker rm $(docker images -aq -f "dangling=true")'
 alias drmf='docker rm -f $(docker ps -aq)'
