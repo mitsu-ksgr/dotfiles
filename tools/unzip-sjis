@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+#------------------------------------------------------------------------------
+#
+# ファイル名が shift-jis なファイルを含む zip ファイルを解凍する.
+#
+# * 参考 ... https://www.lifewithpython.com/2020/08/python-sjis-zip.html
+#
+#------------------------------------------------------------------------------
+import argparse
+import os
+import sys
+import zipfile
+
+DEBUG = False
+
+
+#------------------------------------------------------------------------------
+# Utils
+#------------------------------------------------------------------------------
+def err(message: str) -> None:
+    print(message, file = sys.stderr)
+    sys.exit(1)
+
+
+def get_filename(filepath: str) -> str:
+    return os.path.splitext(os.path.basename(filepath))[0]
+
+
+#------------------------------------------------------------------------------
+# Fix sjis
+#------------------------------------------------------------------------------
+def fix_sjis_name(info: zipfile.ZipInfo) -> str:
+    LANG_ENC_FLAG = 0x800
+    enc = 'utf-8' if info.flag_bits & LANG_ENC_FLAG else 'cp437'
+    return info.filename.encode(enc).decode('cp932')
+
+
+#------------------------------------------------------------------------------
+# CLI
+#------------------------------------------------------------------------------
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument('zipfile_path')
+    p.add_argument('-l', '--ls',
+            action = 'store_true')
+    p.add_argument('-q', '--quiet',
+            action = 'store_true')
+    return p.parse_args()
+
+
+def main(args):
+    list_only = args.ls
+    be_quiet = args.quiet
+    fname = get_filename(args.zipfile_path)
+    dest = os.path.join(".", fname)
+
+    if DEBUG:
+        print(f"src  : {args.zipfile_path}")
+        print(f"dest : {dest}")
+        print(f"name : {fname}")
+        print(f"list : {args.ls}")
+
+    if list_only:
+        pass
+    else:
+        if os.path.exists(dest):
+            err(f"Error: Already exists: \"{dest}\"")
+        os.mkdir(dest)
+
+    # Extract
+    with zipfile.ZipFile(args.zipfile_path) as zf:
+        for info in zf.infolist():
+            info.filename = fix_sjis_name(info)
+
+            if list_only:
+                print(f"- {info.filename}")
+                continue
+
+            # Extract file.
+            if not be_quiet:
+                print(f"Extract: {info.filename}")
+            zf.extract(info, dest)
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    main(args)
+
