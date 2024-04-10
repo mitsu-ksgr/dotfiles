@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#
+# Open AI - ChatGPT
+#
+# https://chat.openai.com/
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ChatGPT
+Terminal=false
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app=https://chat.openai.com/

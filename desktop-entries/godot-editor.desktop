@@ -1,0 +1,10 @@
+#
+# Godot Editor
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=GodotEditor
+Terminal=false
+Exec=/home/mitsu/dev/bin/godot-editor
+

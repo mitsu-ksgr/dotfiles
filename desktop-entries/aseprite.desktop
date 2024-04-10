@@ -1,0 +1,10 @@
+#
+# Aseprite (Steam)
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Aseprite
+Terminal=false
+Exec=/home/mitsu/.local/share/Steam/steamapps/common/Aseprite/aseprite
+
