@@ -65,6 +65,7 @@ URxvt.cursorColor:      [50]#ff4500
 !
 *.font: xft:Inconsolata:size=18, \
         xft:Noto\ Color\ Emoji:pixelsize=18, \
+        xft:Symbola:pixelsize=18, \
         xft:Font\ Awesome:antialias=true:pixelsize=18, \
         xft:IPAGothic:size=18, \
         xft:DejaVu Sans Mono:size=18, \
