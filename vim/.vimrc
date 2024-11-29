@@ -203,6 +203,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'udalov/kotlin-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'hashivim/vim-terraform'
+    Plug 'elkowar/yuck.vim'
 
     " Svelte
     Plug 'othree/html5.vim'
