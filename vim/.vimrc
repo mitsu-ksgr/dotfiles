@@ -141,17 +141,20 @@ endfunction
 "
 " Key Remap
 "
+inoremap <C-d> <ESC>
+nnoremap <C-d> <ESC>
 nnoremap H 10h
 nnoremap J 10j
 nnoremap K 10k
 nnoremap L 10l
-nnoremap s <Nop>
-nnoremap ss :<C-u>sp<CR>        " Split Horizontal
-nnoremap sv :<C-u>vs<CR>        " Split Vertical
-nnoremap sh <C-w>h              " Move to split view
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
+nnoremap <silent> s <Nop>
+nnoremap <silent> <C-w> <Nop>
+nnoremap <silent> ss :<C-u>sp<CR>        " Split Horizontal
+nnoremap <silent> sv :<C-u>vs<CR>        " Split Vertical
+nnoremap <silent> sh <C-w>h              " Move to split view
+nnoremap <silent> sj <C-w>j
+nnoremap <silent> sk <C-w>k
+nnoremap <silent> sl <C-w>l
 "nnoremap sH <C-w>H              " Move view
 "nnoremap sJ <C-w>J
 "nnoremap sK <C-w>K
@@ -205,6 +208,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'othree/html5.vim'
     Plug 'pangloss/vim-javascript'
     Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
+    " Godot
+    Plug 'habamax/vim-godot'
 call plug#end()
 
 
@@ -304,7 +310,7 @@ let NERDTreeShowHidden=1
 nnoremap <silent> <space><space> :NERDTreeToggle<CR>
 
 " exit vim if the only window left open is a NERDTree.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 "
@@ -365,4 +371,16 @@ function! s:vimrc_local(loc)
         source `=i`
     endfor
 endfunction
+
+
+"
+" tmux
+"
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+else
+    let &t_SI = "\e[5 q"
+    let &t_EI = "\e[2 q"
+endif
 
