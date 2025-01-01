@@ -1,11 +1,125 @@
+/*****************************************************************************
+ * eww.scss
+ *
+ *
+ *****************************************************************************/
+
+// Theme color
+$c_bg: #22273b;
+$c_fg: #e0e0e0;
+$c_sep: #414f60;
+
+// Status color
+$c_ok: blue;
+$c_ng: red;
+$c_critical: #d91656;
+$c_warn: #eff396;
+
+// Colors
+$c_gold: gold;
+
+
+
+//-----------------------------------------------------------------------------
+// General
+//-----------------------------------------------------------------------------
 * {
-  font-family: "Sans-Serif";
-  color: #ffffff;
+  all: unset;
+  font-family: "Mitsu-inconsolata.otf"
 }
 
-window#status-bar {
-  background-color: #1e1e1e;
+tooltip {
+  color: $c_fg;
+  background-color: $c_bg;
+
+  border: 1px solid;
+  border-color: cyan;
   border-radius: 5px;
-  padding: 5px;
 }
+
+
+
+//-----------------------------------------------------------------------------
+// Bar window
+//-----------------------------------------------------------------------------
+.bar {
+  background-color: $c_bg;
+  color: $c_fg;
+  padding: 3px 10px;
+  border-radius: 16px;
+
+  .bar-box {
+    background-color: red;
+  }
+
+  .workspaces {
+    .active {
+      color: lime;
+    }
+    .unused {
+      color: gray;
+    }
+    button:hover {
+      color: cyan;
+    }
+  }
+
+  .sidestuff {
+    .sep {
+      color: $c_sep;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .metric {
+      .label {
+        font-weight: bold;
+      }
+      .value {
+        padding-left: 3px;
+        color: $c_fg;
+      }
+    }
+
+    .volume {
+      .icon.mute {
+        color: $c_warn;
+      }
+      .icon {
+      }
+    }
+
+    .battery {
+      .icon.Charging {
+        color: $c_gold;
+      }
+      .icon.Discharging.critical {
+        color: $c_critical;
+      }
+      .icon.Discharging.warn {
+        color: $c_warn;
+      }
+      .icon.Discharging {
+        color: $c_fg;
+      }
+    }
+
+    .netstate {
+      .icon.none {
+        color: $c_critical;
+      }
+      .icon.hoge {
+        color: yellow;
+      }
+      .label.wireless {
+        &.excellent { color: $c_fg;       }
+        &.good      { color: $c_fg;       }
+        &.normal    { color: $c_fg;       }
+        &.weak      { color: $c_warn;     }
+        &.bad       { color: $c_critical; }
+      }
+    }
+
+  } // .sidestuff
+} // .bar
 

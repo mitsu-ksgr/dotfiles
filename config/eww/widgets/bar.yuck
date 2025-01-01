@@ -1,0 +1,169 @@
+;;
+;; bar.yuck
+;;
+;; - GitHub ... https://github.com/elkowar/eww
+;; - Docs ..... https://elkowar.github.io/eww/eww.html
+;; - Config ... https://elkowar.github.io/eww/configuration.html
+;;
+
+;;-----------------------------------------------------------------------------
+;; Workspaces
+;;-----------------------------------------------------------------------------
+;;
+;; Variables
+;;
+(defpoll hypr_workspaces :interval "1s" "scripts/eww-hypr-ws.sh")
+
+
+;;
+;; Widgets
+;;
+(defwidget workspaces []
+  (literal :content hypr_workspaces))
+
+
+
+;;-----------------------------------------------------------------------------
+;; Sidestuff
+;;-----------------------------------------------------------------------------
+;;
+;; Variables
+;;
+(defpoll sound
+  :initial '{"is_mute":"mute","volume":0}'
+  :interval "1s"
+  "scripts/sound.sh value")
+
+(defpoll time
+  :initial '1991/08/25 (日) 01:23:45'
+  :interval "1s"
+  "env -i LC_TIME=ja_JP.utf-8 date '+%Y/%m/%d (%a) %H:%M:%S'")
+
+(defpoll netstate
+  :initial '{"state": "disconnected", "type": "none"}'
+  :interval "5s"
+  "scripts/net-state.sh")
+
+
+
+;;
+;; Widgets
+;;
+(defwidget sep []
+  (box :spacing 0
+    (label :class "sep" :text "|")
+    ))
+
+(defwidget metric [label value]
+  (box :orientation "h"
+       :class "metric"
+       :spacing 5
+       :space-evenly false
+    (box :class "label" label)
+    (box :class "value" value)
+    ))
+
+(defwidget w_volume []
+  (box :class "volume"
+       :space-evenly false
+       :spacing 7
+    (label :class "icon ${sound.is_mute == 'true' ? 'mute' : ''}"
+           :text {sound.is_mute == "true" ? "󰖁"
+                : sound.volume > 50 ? "󰕾"
+                : sound.volume > 10 ? "󰖀"
+                : "󰕿"})
+    (label :class "label"
+           :text "${sound.volume}%"
+           :visible {sound.is_mute == "false"})
+    (label :class "label"
+           :text "MUTE"
+           :visible {sound.is_mute == "true"})
+    ))
+
+(defwidget w_battery []
+  (box :class "battery"
+       :space-evenly false
+       :spacing 3
+
+    ;; EWW_BATTERY["BAT0"].status ... 'Charging' or 'Discharging'
+    (label :class {"icon ${EWW_BATTERY['BAT0'].status} " +
+                    "${EWW_BATTERY['BAT0'].capacity <= 20 ? 'critical'
+                     : EWW_BATTERY['BAT0'].capacity <= 40 ? 'warn' : ''}"
+                  }
+           :text {EWW_BATTERY['BAT0'].status == "Charging" ? "󰂄"
+                : EWW_BATTERY['BAT0'].capacity > 95 ? "󰁹"
+                : EWW_BATTERY['BAT0'].capacity > 90 ? "󰂂"
+                : EWW_BATTERY['BAT0'].capacity > 80 ? "󰂁"
+                : EWW_BATTERY['BAT0'].capacity > 70 ? "󰂀"
+                : EWW_BATTERY['BAT0'].capacity > 60 ? "󰁿"
+                : EWW_BATTERY['BAT0'].capacity > 50 ? "󰁾"
+                : EWW_BATTERY['BAT0'].capacity > 40 ? "󰁽"
+                : EWW_BATTERY['BAT0'].capacity > 30 ? "󰁼"
+                : EWW_BATTERY['BAT0'].capacity > 20 ? "󰁻"
+                : EWW_BATTERY['BAT0'].capacity > 10 ? "󰁺"
+                : "󰂃" })
+    (label :class "label" :text "${EWW_BATTERY['BAT0'].capacity}%")
+    ))
+
+
+(defwidget w_netstate []
+  (box :class "netstate"
+       :space-evenly false
+       :spacing 7
+       :tooltip {netstate.type == "wired" ? "${netstate.interface}"
+               : netstate.type == "wireless" ? "SSID: ${netstate.ssid} (${netstate.interface})"
+               : ""}
+
+    (label :class {"icon ${netstate.type}"}
+           :text {netstate.type == "wired" ? "󰌗"
+                : netstate.type == "wireless" ? "󰖩"
+                : "󰖪" })
+    (label :class "label ${netstate.type} ${netstate.quality}"
+           :text {netstate.type == "wired" ? "Wired"
+                : netstate.type == "wireless" ? "${netstate.signal}"
+                : "NoConn" })
+    ))
+
+
+(defwidget sidestuff []
+  (box :class "sidestuff"
+       :orientation "h"
+       :space-evenly false
+       :spacing 5
+       :halign "end"
+
+    (metric :label ""
+            :value "${round(EWW_DISK['/'].used_perc, 1)}%")
+    (metric :label ""
+            :value "${round(EWW_RAM.used_mem_perc, 1)}%")
+    (metric :label ""
+            :value "${round(EWW_CPU['avg'], 1)}%")
+
+    (sep)
+    (w_volume)
+    (w_battery)
+    (w_netstate)
+    (sep)
+    time
+    ))
+
+
+
+;;-----------------------------------------------------------------------------
+;; Main widget
+;;-----------------------------------------------------------------------------
+(defwidget bar []
+  (centerbox :orientation "h"
+    (box :class "right"
+         :halign "start"
+      (workspaces :halign "start"))
+
+    (box :class "center")
+
+    (box :class "right"
+         :halign "end"
+      (sidestuff  :halign "end"))
+    ))
+
+
+
