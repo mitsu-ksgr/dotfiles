@@ -144,7 +144,7 @@ EOS
             pactl set-sink-mute ${sink_name} 0
             ;;
 
-        toggle | toggle-mute | tmute )
+        toggle | toggle-mute | tmute | tm )
             pactl set-sink-mute ${sink_name} toggle
             ;;
 

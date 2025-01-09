@@ -67,11 +67,13 @@
   (box :class "volume"
        :space-evenly false
        :spacing 7
-    (label :class "icon ${sound.is_mute == 'true' ? 'mute' : ''}"
-           :text {sound.is_mute == "true" ? "󰖁"
-                : sound.volume > 50 ? "󰕾"
-                : sound.volume > 10 ? "󰖀"
-                : "󰕿"})
+    (button :onclick "sh ./scripts/sound.sh toggle"
+            :class "icon ${sound.is_mute == 'true' ? 'mute' : ''}"
+            {sound.is_mute == "true" ? "󰖁"
+                 : sound.volume > 50 ? "󰕾"
+                 : sound.volume > 10 ? "󰖀"
+                 : "󰕿"})
+
     (label :class "label"
            :text "${sound.volume}%"
            :visible {sound.is_mute == "false"})

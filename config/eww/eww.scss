@@ -8,6 +8,7 @@
 $c_bg: #22273b;
 $c_fg: #e0e0e0;
 $c_sep: #414f60;
+$c_border: #33ccff;
 
 // Status color
 $c_ok: blue;
@@ -46,7 +47,11 @@ tooltip {
   background-color: $c_bg;
   color: $c_fg;
   padding: 3px 10px;
-  border-radius: 16px;
+
+  border-style: solid;
+  border-radius: 8px;
+  border-color: $c_border;
+  border-width: 2px;
 
   .bar-box {
     background-color: red;

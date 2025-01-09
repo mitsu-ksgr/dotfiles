@@ -22,7 +22,7 @@
   :geometry (geometry :x "0%"
                       :y "10px"
                       :width "98%"
-                      :height "5%"
+                      :height "25px"
                       :anchor "top center")
   :reserve (struts :side "top" :distance "5%")
   (bar))
