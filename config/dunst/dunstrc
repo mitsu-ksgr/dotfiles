@@ -46,7 +46,8 @@
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (10, 50)
+    #offset = (10, 50)
+    offset = (25, 25)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -113,16 +114,19 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    #frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    #frame_color = "#aaaaaa"
+    frame_color = "#33ccff"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    #gap_size = 0
+    gap_size = 2
 
     # Define a color for the separator.
     # possible values are:
@@ -150,7 +154,7 @@
     ### Text ###
 
     #font = Monospace 8
-    font = Inconsolata 18
+    font = Inconsolata 14
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
