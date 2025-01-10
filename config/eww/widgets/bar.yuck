@@ -147,6 +147,16 @@
     (w_netstate)
     (sep)
     time
+
+    (sep)
+    ;;(button :onclick "${EWW_CMD} open --screen 1 powermenu"
+    ;;        :class "powerbutton"
+    ;;        "󰐥")
+    (button :onclick "${EWW_CMD} open powermenu"
+            :class "powerbutton"
+            "󰐥")
+
+
     ))
 
 

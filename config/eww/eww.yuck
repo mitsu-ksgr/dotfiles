@@ -11,6 +11,7 @@
 ;; Widgets
 ;;-----------------------------------------------------------------------------
 (include "./widgets/bar.yuck")
+(include "./widgets/powermenu.yuck")
 
 
 ;;-----------------------------------------------------------------------------
@@ -26,6 +27,16 @@
                       :anchor "top center")
   :reserve (struts :side "top" :distance "5%")
   (bar))
+
+
+(defwindow powermenu
+  :monitor 0
+  :geometry (geometry :x "50%"
+                      :y "50%"
+                      :width "650px"
+                      :height "150px"
+                      :anchor "center center")
+  (powermenu))
 
 
 ;;-----------------------------------------------------------------------------

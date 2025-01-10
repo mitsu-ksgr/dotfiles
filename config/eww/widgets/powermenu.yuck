@@ -1,0 +1,56 @@
+;;
+;; powermenu.yuck
+;;
+
+
+(defwidget powermenu []
+  (box :class "pmenubox"
+       :orientation "h"
+       :space-evenly true
+
+    (button :onclick "./scripts/powermenu.sh logout"
+            :class "pbtn"
+      (box :class "pbtn-label"
+           :orientation "v"
+           :space-evenly false
+        (label :class "icon" :xalign 0.45 :text "󰍃")
+        (label :class "text" :xalign 0.50 :text "Logout")
+        ))
+
+    (button :onclick "./scripts/powermenu.sh shutdown"
+            :class "pbtn"
+      (box :class "pbtn-label"
+           :orientation "v"
+           :space-evenly false
+        (label :class "icon" :xalign 0.45 :text "󰐥")
+        (label :class "text" :xalign 0.50 :text "Shutdown")
+        ))
+
+    (button :onclick "./scripts/powermenu.sh reboot"
+            :class "pbtn"
+      (box :class "pbtn-label"
+           :orientation "v"
+           :space-evenly false
+        (label :class "icon" :xalign 0.45 :text "󰜉")
+        (label :class "text" :xalign 0.50 :text "Reboot")
+        ))
+
+    (button :onclick "./scripts/powermenu.sh suspend"
+            :class "pbtn"
+      (box :class "pbtn-label"
+           :orientation "v"
+           :space-evenly false
+        (label :class "icon" :xalign 0.45 :text "")
+        (label :class "text" :xalign 0.50 :text "Suspend")
+        ))
+
+    (button :onclick "${EWW_CMD} close powermenu"
+            :class "pbtn"
+      (box :class "pbtn-label"
+           :orientation "v"
+           :space-evenly false
+        (label :class "icon" :xalign 0.40 :text "󰦥")
+        (label :class "text" :xalign 0.50 :text "Close")
+        ))
+
+    ))

@@ -18,7 +18,8 @@ $c_warn: #eff396;
 
 // Colors
 $c_gold: gold;
-
+$c_btn_hover: #00ff99;
+$c_btn_active: #00663d;
 
 
 //-----------------------------------------------------------------------------
@@ -125,6 +126,74 @@ tooltip {
       }
     }
 
+    .powerbutton {
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 20px;
+    }
+    .powerbutton:hover {
+      color: $c_btn_hover;
+    }
+    .powerbutton:active {
+      color: $c_btn_active;
+    }
+
   } // .sidestuff
 } // .bar
+
+
+//-----------------------------------------------------------------------------
+// Powermenu window
+//-----------------------------------------------------------------------------
+.powermenu {
+  background-color: $c_bg;
+  color: $c_fg;
+
+  padding-top: 27px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: $c_border;
+  border-width: 2px;
+
+  .pbtn {}
+  .pbtn:hover  { color: $c_btn_hover; }
+  .pbtn:active { color: $c_btn_active; }
+  .pbtn-label {
+    .icon {
+      font-size: 64px;
+    }
+    .text {
+      font-size: 16px;
+    }
+  }
+
+} // .powermenu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

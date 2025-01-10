@@ -22,4 +22,7 @@ eww status bar.
   - [iw](https://wireless.docs.kernel.org/en/latest/en/users/documentation/iw.html)
 
 
+### Window
+- bar
+- powermenu
 
