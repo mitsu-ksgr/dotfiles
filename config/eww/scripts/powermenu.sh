@@ -4,6 +4,7 @@
 #
 # - Archlinux
 # - Hyprland DE
+#   - hyprlock
 # - systemd
 #
 set -eu
@@ -30,6 +31,11 @@ main() {
         logout )
             close_powermenu
             hyprctl dispatch exit
+            ;;
+
+        lock )
+            close_powermenu
+            hyprlock
             ;;
 
         shutdown )

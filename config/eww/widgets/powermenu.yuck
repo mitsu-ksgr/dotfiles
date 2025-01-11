@@ -17,6 +17,15 @@
         (label :class "text" :xalign 0.50 :text "Logout")
         ))
 
+    (button :onclick "./scripts/powermenu.sh lock"
+            :class "pbtn"
+      (box :class "pbtn-label"
+           :orientation "v"
+           :space-evenly false
+        (label :class "icon" :xalign 0.45 :text "")
+        (label :class "text" :xalign 0.50 :text "Lock")
+        ))
+
     (button :onclick "./scripts/powermenu.sh shutdown"
             :class "pbtn"
       (box :class "pbtn-label"
