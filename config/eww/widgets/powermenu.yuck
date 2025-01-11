@@ -59,7 +59,7 @@
            :orientation "v"
            :space-evenly false
         (label :class "icon" :xalign 0.40 :text "󰦥")
-        (label :class "text" :xalign 0.50 :text "Close")
+        (label :class "text" :xalign 0.50 :text "Cancel")
         ))
 
     ))
