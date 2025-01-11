@@ -149,10 +149,7 @@
     time
 
     (sep)
-    ;;(button :onclick "${EWW_CMD} open --screen 1 powermenu"
-    ;;        :class "powerbutton"
-    ;;        "󰐥")
-    (button :onclick "${EWW_CMD} open powermenu"
+    (button :onclick "${EWW_CMD} open --screen 0 powermenu"
             :class "powerbutton"
             "󰐥")
 
