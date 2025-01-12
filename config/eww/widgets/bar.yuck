@@ -44,6 +44,10 @@
   :interval "5s"
   "scripts/net-state.sh")
 
+(defpoll brightness
+  :initial "50%"
+  :interval "1s"
+  "brightnessctl i | grep 'Current brightness' | awk '{print substr($4, 2, length($4)-2)}'")
 
 
 ;;
@@ -144,6 +148,8 @@
             :value "${EWW_TEMPS['CORETEMP_PACKAGE_ID_0']}℃")
 
     (sep)
+    (metric :label "󰃟"
+            :value "${brightness}")
     (w_volume)
     (w_battery)
     (w_netstate)
