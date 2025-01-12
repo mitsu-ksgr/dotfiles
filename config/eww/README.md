@@ -20,6 +20,8 @@ eww status bar.
   - pactl ... [libpulse](https://archlinux.org/packages/extra/x86_64/libpulse/)
 - Network
   - [iw](https://wireless.docs.kernel.org/en/latest/en/users/documentation/iw.html)
+- Brightness
+  - [brightnessctl](https://github.com/Hummer12007/brightnessctl)
 
 
 ### Window
