@@ -140,6 +140,8 @@
             :value "${round(EWW_RAM.used_mem_perc, 1)}%")
     (metric :label ""
             :value "${round(EWW_CPU['avg'], 1)}%")
+    (metric :label ""
+            :value "${EWW_TEMPS['CORETEMP_PACKAGE_ID_0']}℃")
 
     (sep)
     (w_volume)
