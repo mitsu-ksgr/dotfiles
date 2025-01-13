@@ -29,7 +29,7 @@ readonly MENU_LOGOUT="logout"
 readonly MENU_SCREEN_LOCK="lock - Screen lock"
 readonly MENU_SHUTDOWN="shutdown"
 readonly MENU_REBOOT="reboot"
-readonly MENU_SUSPEND="suspend"
+readonly MENU_SUSPEND="hybernate - suspend to RAM"
 
 # List
 readonly MENU_LIST=(
