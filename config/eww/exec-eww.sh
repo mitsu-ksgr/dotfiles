@@ -35,7 +35,7 @@ main() {
         log "eww is already started."
     fi
 
-    local readonly monitor_count=$(count_monitor)
+    local -r monitor_count=$(count_monitor)
     log "monitor count: ${monitor_count}"
 
     ${EWW} close-all

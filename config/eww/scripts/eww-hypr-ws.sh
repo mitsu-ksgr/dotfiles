@@ -24,8 +24,8 @@ readonly CSS_CLASS_UNUSED="unused"
 
 
 main() {
-    local readonly used_ws=$(hyprctl -j workspaces | jq -c "map(.id)")
-    local readonly cur=$(hyprctl -j activeworkspace | jq -c ".id")
+    local -r used_ws=$(hyprctl -j workspaces | jq -c "map(.id)")
+    local -r cur=$(hyprctl -j activeworkspace | jq -c ".id")
 
     local ret=$(cat <<-EOS
         (box :class "workspaces"

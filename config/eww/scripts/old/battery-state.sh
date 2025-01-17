@@ -26,8 +26,8 @@ readonly ICON_DISCHARGING_LOW="🪫"
 
 
 main() {
-    local readonly cap=$(cat ${FILE_BAT}/capacity)
-    local readonly state=$(cat ${FILE_BAT}/status)
+    local -r cap=$(cat ${FILE_BAT}/capacity)
+    local -r state=$(cat ${FILE_BAT}/status)
 
 
     # Charging.

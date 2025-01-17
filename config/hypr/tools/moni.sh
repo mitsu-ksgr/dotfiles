@@ -64,7 +64,7 @@ main() {
     # - ext ... default.
     # - mirror ... mirroring mode.
     #--------------------------------------------
-    local readonly mode="${1:-ext}"
+    local -r mode="${1:-ext}"
     #echo "Mode: ${mode}"
 
     case "${mode}" in
@@ -80,8 +80,8 @@ main() {
     #--------------------------------------------
     # Get monitor information
     #--------------------------------------------
-    local readonly monis=$(hyprctl -j monitors all)
-    local readonly moni_count=$(echo "${monis}" | jq ". | length")
+    local -r monis=$(hyprctl -j monitors all)
+    local -r moni_count=$(echo "${monis}" | jq ". | length")
 
     if [ "${moni_count}" -le 1 ]; then
         echo "Main monitor only."
@@ -90,9 +90,9 @@ main() {
 
     ### DEBUG: start
     #for ((i=0; i<moni_count; ++i)); do
-    #    local readonly w=$(echo "${monis}" | jq ".[${i}].width")
-    #    local readonly h=$(echo "${monis}" | jq ".[${i}].height")
-    #    local readonly name=$(echo "${monis}" | jq -r ".[${i}].name")
+    #    local -r w=$(echo "${monis}" | jq ".[${i}].width")
+    #    local -r h=$(echo "${monis}" | jq ".[${i}].height")
+    #    local -r name=$(echo "${monis}" | jq -r ".[${i}].name")
     #    echo "- Monitor [${i}]: ${name} (${w}x${h})"
     #done
     ### DEBUG: end
@@ -102,10 +102,10 @@ main() {
     #--------------------------------------------
     # External monitor
     #--------------------------------------------
-    local readonly em_name=$(echo "${monis}" | jq -r ".[1].name")
+    local -r em_name=$(echo "${monis}" | jq -r ".[1].name")
 
     # Resolution check
-    local readonly em_reso_available=$(
+    local -r em_reso_available=$(
         echo "${monis}" |
         jq "[.[1].availableModes[] | contains(\"${EM_RESO}\")] | any"
     )

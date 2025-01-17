@@ -24,15 +24,15 @@ readonly CSS_CLASS_UNUSED="unused"
 
 
 get_net_state() {
-    local readonly p=$(pwd)
+    local -r p=$(pwd)
     cd $(dirname $0)
-    local readonly s=$("./net-state.sh")
+    local -r s=$("./net-state.sh")
     cd "${p}"
     echo "${s}"
 }
 
 check_signal_strength() {
-    local readonly signal="${1-}"
+    local -r signal="${1-}"
 
     if [ "${signal}" -ge -30 ]; then
         echo "excellent"
@@ -50,8 +50,8 @@ check_signal_strength() {
 
 
 main() {
-    local readonly net_state=$(get_net_state)
-    local readonly state=$(echo "${net_state}" | jq -r ".state")
+    local -r net_state=$(get_net_state)
+    local -r state=$(echo "${net_state}" | jq -r ".state")
 
     #echo "* Net State"
     #echo "${net_state}"
@@ -64,10 +64,10 @@ main() {
         class="disconnected"
         content="🌐❌"
     else
-        local readonly ssid=$(echo "${net_state}" | jq -r ".ssid")
-        local readonly signal=$(echo "${net_state}" | jq -r ".signal")
+        local -r ssid=$(echo "${net_state}" | jq -r ".ssid")
+        local -r signal=$(echo "${net_state}" | jq -r ".signal")
 
-        #local readonly quality=$(check_signal_strength "${signal}")
+        #local -r quality=$(check_signal_strength "${signal}")
 
         class="$(check_signal_strength "${signal}")"
         content="🌐${signal}dBm"

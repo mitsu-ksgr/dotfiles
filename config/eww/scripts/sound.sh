@@ -32,7 +32,7 @@ readonly sink_info=$(\
 # Utils
 #
 validate_number() {
-    local readonly value=$(echo "${1-}" | grep -Eo '^[+-]?[0-9]+%?$')
+    local -r value=$(echo "${1-}" | grep -Eo '^[+-]?[0-9]+%?$')
     echo "${value}" | tr -d "%"
 }
 
@@ -47,7 +47,7 @@ get_volume() {
 }
 
 set_volume() {
-    local readonly vol=$(echo "${1-}" | tr -d "%") # Remove % if exists.
+    local -r vol=$(echo "${1-}" | tr -d "%") # Remove % if exists.
     if [ -z "${vol}" ]; then
         return # TODO: Error?
     fi
@@ -71,7 +71,7 @@ main() {
     if [ -z "${mode}" ]; then
         mode="volume"
     fi
-    local readonly is_mute=$(is_mute)
+    local -r is_mute=$(is_mute)
 
 
     ### Mode
@@ -81,7 +81,7 @@ main() {
             if [ "${is_mute}" == "true" ]; then
                 echo "🔇Mute"
             else
-                readonly vol=$(get_volume | tr -d "%")
+                local -r vol=$(get_volume | tr -d "%")
 
                 if [ "${vol}" -ge "70" ]; then
                     echo "🔊${vol}%"
@@ -94,8 +94,8 @@ main() {
             ;;
 
         value )
-            local readonly vol=$(get_volume | tr -d "%")
-            local readonly ret=$(cat <<-EOS
+            local -r vol=$(get_volume | tr -d "%")
+            local -r ret=$(cat <<-EOS
                 {
                     "is_mute": "${is_mute}",
                     "volume": ${vol}
@@ -110,14 +110,14 @@ EOS
             ;;
 
         set )
-            local readonly vol=$(validate_number "${2-}")
+            local -r vol=$(validate_number "${2-}")
             if [ -n "${vol}" ]; then
                 set_volume "${vol}"
             fi
             ;;
 
         up )
-            local readonly vol=$(validate_number "${2-}" | sed 's/[^0-9]//g')
+            local -r vol=$(validate_number "${2-}" | sed 's/[^0-9]//g')
             if [ -n "${vol}" ]; then
                 set_volume "+${vol}"
             else
@@ -126,7 +126,7 @@ EOS
             ;;
 
         down )
-            local readonly vol=$(validate_number "${2-}" | sed 's/[^0-9]//g')
+            local -r vol=$(validate_number "${2-}" | sed 's/[^0-9]//g')
             if [ -n "${vol}" ]; then
                 set_volume "-${vol}"
             else
@@ -151,7 +151,7 @@ EOS
 
         ### Others: Specify the volume value directly
         * )
-            local readonly vol=$(validate_number "${mode}")
+            local -r vol=$(validate_number "${mode}")
             if [ -n "${vol}" ]; then
                 set_volume "${vol}"
             fi

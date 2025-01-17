@@ -2,6 +2,12 @@
 #
 # custom wofi menu.
 #
+#
+# * TODO
+# - Screenshot for the active window.
+# - Screen recording.
+#   - wf-recorder.
+#
 set -eu
 
 
@@ -61,7 +67,7 @@ now_ts() {
 }
 
 take_ss() {
-    local readonly fpath="${SS_STORE_DIR}/ss_$(now_ts).png"
+    local -r fpath="${SS_STORE_DIR}/ss_$(now_ts).png"
     slurp | grim -g - "${fpath}"
     notify-send "Screenshot" "Saved at ${fpath}"
 }
@@ -72,7 +78,7 @@ take_ss() {
 # Main process
 #------------------------------------------------------------------------------
 main() {
-    local readonly mode=$(
+    local -r mode=$(
         printf "%s\n" "${MENU_LIST[@]}" |
         wofi --dmenu --prompt "Select an option:"
     )

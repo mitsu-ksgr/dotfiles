@@ -22,7 +22,7 @@ close_powermenu() {
 }
 
 main() {
-    local readonly mode="${1-}"
+    local -r mode="${1-}"
     if [ -z "${mode}" ]; then
         mode="cancel"
     fi

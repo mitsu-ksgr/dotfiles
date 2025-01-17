@@ -14,7 +14,7 @@ set -eu
 
 main() {
     ### Args
-    local mode="${1-}"
+    local -r mode="${1-}"
     if [ -z "${mode}" ]; then
         exit 0
     fi
@@ -31,19 +31,19 @@ main() {
             ;;
 
         check-active )
-            local target="${2-}"
+            local -r target="${2-}"
             if [ -z "${target}" ]; then
                 exit 0 # TODO: Error?
             fi
 
-            local cur=$(hyprctl -j activeworkspace | jq ".id")
+            local -r cur=$(hyprctl -j activeworkspace | jq ".id")
             if [ "${target}" == "${cur}" ]; then
                 echo "active"
             fi
             ;;
 
         to )
-            local next="${2-}"
+            local -r next="${2-}"
             if [ -z "${next}" ]; then
                 exit 0 # TODO: Error?
             fi

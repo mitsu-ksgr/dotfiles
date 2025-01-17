@@ -23,7 +23,7 @@
 set -eu
 
 check_wifi_signal_strength() {
-    local readonly signal="${1-}"
+    local -r signal="${1-}"
 
     if [ "${signal}" -ge -30 ]; then
         echo "excellent"
@@ -39,7 +39,7 @@ check_wifi_signal_strength() {
 }
 
 main() {
-    local readonly ipr=$(ip route)
+    local -r ipr=$(ip route)
 
     if [[ "${ipr}" == "" ]]; then
         echo '{"state": "disconnected", "type": "none"}'
@@ -47,7 +47,7 @@ main() {
     fi
 
     # Get the first default interface name
-    local readonly interface=$(echo "${ipr}" | awk '/^default/ {print $5; exit}')
+    local -r interface=$(echo "${ipr}" | awk '/^default/ {print $5; exit}')
 
     # Wired connection
     if [[ "${interface}" == "en"* ]]; then
@@ -62,14 +62,14 @@ EOS
     fi
 
     # Wireless connection
-    local readonly conn_info=$(iw dev "${interface}" link)
+    local -r conn_info=$(iw dev "${interface}" link)
     if [[ "${conn_info}" == "Not connected." ]]; then
         echo '{"state": "disconnected", "type": "none"}'
 
     else
-        local readonly ssid=$(echo "${conn_info}" | grep 'SSID' | awk '{printf $2}')
-        local readonly signal=$(echo "${conn_info}" | grep 'signal' | awk '{printf $2}')
-        local readonly quality="$(check_wifi_signal_strength "${signal}")"
+        local -r ssid=$(echo "${conn_info}" | grep 'SSID' | awk '{printf $2}')
+        local -r signal=$(echo "${conn_info}" | grep 'signal' | awk '{printf $2}')
+        local -r quality="$(check_wifi_signal_strength "${signal}")"
 
         cat <<-EOS | jq -c --monochrome-output .
         {
