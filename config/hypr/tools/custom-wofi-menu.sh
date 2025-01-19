@@ -23,7 +23,10 @@ readonly SS_STORE_DIR="${HOME_DIR}/media/screenshots"
 # Menu list
 #------------------------------------------------------------------------------
 readonly MENU_SAY_HI="Say hi"
+
+# Utils
 readonly MENU_TAKE_SS="ss - Take Screenshot"
+readonly MENU_RESTART_FCITX="fcitx - Restart fcitx5 service"
 
 # GUI
 readonly MENU_RELOAD_EWW="eww - Reload eww"
@@ -43,6 +46,7 @@ readonly MENU_LIST=(
 
     # Utils
     "${MENU_TAKE_SS}"
+    "${MENU_RESTART_FCITX}"
 
     # Hyprland
     "${MENU_RELOAD_EWW}"
@@ -89,6 +93,10 @@ main() {
         #----------------------------------------------------------------------
         "${MENU_TAKE_SS}" )
             take_ss
+            ;;
+
+        "${MENU_RESTART_FCITX}" )
+            systemctl --user restart fcitx5.service
             ;;
 
 
