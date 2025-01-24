@@ -334,6 +334,13 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_fold_enabled = 0
 let g:lsp_text_edit_enabled = 0
 
+" C++
+let g:lsp_settings = {
+    \   'clang': {
+    \       'cmd': ['clangd', '--enable-config']
+    \   }
+    \ }
+
 " Golang
 let g:go_doc_keywordprg_enabled = 0 " disable shift-k key-map
 if executable('gopls')
