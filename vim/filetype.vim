@@ -2,7 +2,14 @@
 "
 "   filetype.vim
 "
+"   https://vim-jp.org/vimdoc-ja/filetype.html
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if exists("did_load_filetypes")
+    finish
+endif
+
 augroup filetypedetect
     au!
     au BufNewFile,BufRead *.rb      setfiletype ruby
@@ -14,5 +21,6 @@ augroup filetypedetect
     au BufNewFile,BufRead *.json    setfiletype json
     au BufNewFile,BufRead *.sh      setfiletype sh
     au BufNewFile,BufRead *.toml    setfiletype toml
+    au BufNewFile,BufRead *.md      setfiletype markdown
 augroup END
 
