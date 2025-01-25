@@ -30,6 +30,7 @@ alias grep='grep -n --color=auto'
 alias frep='find . -type f -name "*.*" | xargs grep -n --color=auto'
 alias tree='tree -NC'   # N:文字化け対策, C:色付け
 alias bokuno='sudo chown -R $USER:$USER'
+alias japman='man -L ja_JP.utf8'
 
 # Image Magick
 alias imgsize='identify -format "%wx%h\n"'
