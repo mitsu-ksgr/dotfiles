@@ -204,6 +204,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'leafgarland/typescript-vim'
     Plug 'hashivim/vim-terraform'
     Plug 'elkowar/yuck.vim'
+    Plug 'rust-lang/rust.vim'
 
     " Svelte
     Plug 'othree/html5.vim'
