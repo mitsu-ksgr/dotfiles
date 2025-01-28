@@ -27,6 +27,8 @@ readonly MENU_SAY_HI="Say hi"
 # Utils
 readonly MENU_TAKE_SS="ss - Take Screenshot"
 readonly MENU_RESTART_FCITX="fcitx - Restart fcitx5 service"
+readonly MENU_INPUT_MID_SENSE="input - Sensitivity x1"
+readonly MENU_INPUT_HIGH_SENSE="input - Sensitivity x2"
 
 # GUI
 readonly MENU_RELOAD_EWW="eww - Reload eww"
@@ -47,6 +49,8 @@ readonly MENU_LIST=(
     # Utils
     "${MENU_TAKE_SS}"
     "${MENU_RESTART_FCITX}"
+    "${MENU_INPUT_MID_SENSE}"
+    "${MENU_INPUT_HIGH_SENSE}"
 
     # Hyprland
     "${MENU_RELOAD_EWW}"
@@ -97,6 +101,14 @@ main() {
 
         "${MENU_RESTART_FCITX}" )
             systemctl --user restart fcitx5.service
+            ;;
+
+        "${MENU_INPUT_MID_SENSE}" )
+            hyprctl keyword input:sensitivity 1.0
+            ;;
+
+        "${MENU_INPUT_HIGH_SENSE}" )
+            hyprctl keyword input:sensitivity 2.0
             ;;
 
 
