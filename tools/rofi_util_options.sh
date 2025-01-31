@@ -117,8 +117,8 @@ case "${result}" in
         ;;
 
     "Fcitx Restart" )
-        fcitx -r
-        notify 'Restart fcitx'
+        fcitx5 -r
+        notify 'Restart fcitx5'
         ;;
 
     "compton-switch" )
