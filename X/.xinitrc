@@ -33,7 +33,9 @@ fi
 export DefaultImModule=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
+export GLFX_IM_MODULE=ibus
+export INPUT_METHOD=fcitx
+export XMODIFIERS=@im=fcitx
 
 
 #
