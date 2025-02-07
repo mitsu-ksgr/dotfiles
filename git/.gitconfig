@@ -73,6 +73,9 @@
     # git tag list
     tags = tag -l --sort=v:refname
 
+    # github
+    pull-pr = "!f() { git fetch origin \"pull/${1}/head:pr${1}\"; }; f"
+
 [ghq]
     root = ~/dev/src
 
