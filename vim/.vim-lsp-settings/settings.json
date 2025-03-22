@@ -1,0 +1,12 @@
+{
+  "clang": {
+    "cmd": ["clangd", "--enable-config"]
+  },
+  "rust-analyzer": {
+    "initialization_options": {
+      "check": {
+        "ignore": ["dead_code"]
+      }
+    }
+  }
+}

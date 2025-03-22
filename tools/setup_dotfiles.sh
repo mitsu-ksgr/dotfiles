@@ -176,9 +176,10 @@ main() {
     if [ ! -d "${HOME}/.vim" ]; then
         mkdir -p "${HOME}/.vim"
     fi
-    safeln "${dot_path}/vim/.vimrc"         "${HOME}/.vimrc"
-    safeln "${dot_path}/vim/filetype.vim"   "${HOME}/.vim/filetype.vim"
-    safeln "${dot_path}/vim/after"          "${HOME}/.vim/after"
+    safeln "${dot_path}/vim/.vimrc"             "${HOME}/.vimrc"
+    safeln "${dot_path}/vim/filetype.vim"       "${HOME}/.vim/filetype.vim"
+    safeln "${dot_path}/vim/after"              "${HOME}/.vim/after"
+    safeln "${dot_path}/vim/.vim-lsp-settings"  "${HOME}/.vim-lsp-settings"
     echo -e "\n"
 
 
