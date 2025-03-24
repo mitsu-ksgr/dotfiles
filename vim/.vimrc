@@ -330,10 +330,11 @@ endtry
 " https://github.com/prabirshrestha/vim-lsp
 " https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Go
 "
-let g:lsp_async_completion = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_fold_enabled = 0
-let g:lsp_text_edit_enabled = 0
+let g:lsp_async_completion = 1                  " 非同期補完を有効化
+let g:lsp_diagnostics_echo_cursor = 1           " カーソル下の診断メッセージをエコー表示する
+let g:lsp_fold_enabled = 0                      " LSP サーバのコード折りたたみ機能を無効化
+let g:lsp_text_edit_enabled = 0                 " LSP サーバのテキスト編集を無効化
+let g:lsp_diagnostics_virtual_text_enabled = 0  " エディタ上に直接表示させない
 
 " Golang
 let g:go_doc_keywordprg_enabled = 0 " disable shift-k key-map
