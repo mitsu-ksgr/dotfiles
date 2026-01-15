@@ -22,6 +22,7 @@ set whichwrap=h,l,b,s,<,>,[,]
 set nowrap
 set backspace=indent,eol,start
 set textwidth=0                     " disable auto word wrapping.
+set scrolloff=10
 syntax on
 filetype plugin indent on
 
