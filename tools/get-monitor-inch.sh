@@ -18,8 +18,7 @@ EOF
     h=${h%mm}
 
     # Calculate monitor size.
-    #
-    # inch = squrt(w*w + h*h) / 25.4
+    # inch = sqrt(w*w + h*h) / 25.4
     inch=$(echo "scale=1; sqrt(${w}*${w} + ${h}*${h}) / 25.4" | bc)
 
     # Output
