@@ -206,6 +206,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'hashivim/vim-terraform'
     Plug 'elkowar/yuck.vim'
     Plug 'rust-lang/rust.vim'
+    Plug 'wuelnerdotexe/vim-astro'
 
     " Svelte
     Plug 'othree/html5.vim'
