@@ -1,0 +1,10 @@
+#
+# Godot Engine (Steam)
+#
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Godot Engine (Steam)
+Terminal=false
+Exec="/home/mitsu/.local/share/Steam/steamapps/common/Godot Engine/godot.x11.opt.tools.64"
+
