@@ -151,6 +151,26 @@ function peco-ghq-cd() {
 zle -N peco-ghq-cd
 bindkey '^F' peco-ghq-cd
 
+function peco-git-wt-cd() {
+    local worktrees
+    worktrees=$(git wt paths 2>/dev/null)
+
+    if [[ -z "$worktrees" ]]; then
+        zle -M "no worktrees found"
+        return
+    fi
+
+    local selected
+    selected=$(echo "$worktrees" | peco | awk '{print $3}')
+
+    if [[ -n "$selected" ]]; then
+        BUFFER="cd ${selected}"
+    fi
+    zle clean-screen
+}
+zle -N peco-git-wt-cd
+bindkey '^G' peco-git-wt-cd
+
 
 #
 # AWS Helper

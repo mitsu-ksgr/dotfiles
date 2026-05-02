@@ -76,8 +76,14 @@
     # github
     pull-pr = "!f() { git fetch origin \"pull/${1}/head:pr${1}\"; }; f"
 
+    # git worktree helper
+    wt = !git-wt
+
 [ghq]
     root = ~/dev/src
+
+[git-wt]
+    baseDir = ~/dev/worktrees
 
 [init]
     defaultBranch = main
