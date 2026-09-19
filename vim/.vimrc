@@ -197,6 +197,9 @@ call plug#begin('~/.vim/plugged')
     "--------------------------------------------
     " Syntax Highlight
     "--------------------------------------------
+    Plug 'sheerun/vim-polyglot'
+
+    " Todo: remove unused plugins
     Plug 'chr4/nginx.vim'
     Plug 'posva/vim-vue'
     Plug 'slim-template/vim-slim'
@@ -215,6 +218,9 @@ call plug#begin('~/.vim/plugged')
 
     " Godot
     Plug 'habamax/vim-godot'
+
+    " PHP (Laravel)
+    Plug 'phpactor/phpactor'
 call plug#end()
 
 
